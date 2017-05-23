@@ -1,0 +1,33 @@
+{
+  "name": "hasi",
+  "version": "0.0.1",
+  "author": "Kayun Artyom <kayun.artem@gmail.com>",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "normalize.css": "~7.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "fs": "^0.0.1-security",
+    "html-webpack-plugin": "^2.28.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^2.0.5",
+    "pug": "^2.0.0-rc.1",
+    "pug-loader": "^2.3.0",
+    "rupture": "^0.6.2",
+    "style-loader": "^0.18.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^2.6.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-manifest-plugin": "^1.1.0",
+    "webpack-spritesmith": "^0.3.3"
+  },
+  "license": "MIT"
+}
