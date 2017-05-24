@@ -1,0 +1,106 @@
+extends ../layouts/index
+
+block content
+    .main
+        .main__header
+            img.main__logo(src=require("../../images/logo.png"))
+
+        .main__outer
+
+            .main__counter
+                .counter
+                    .counter__col
+                        .counter__title Multiple-Choice Single-Answer
+                        .counter__info.counter__section Select your answer from the options on the left.
+                        .counter__divider
+
+                    .counter__col
+                        .counter__time.counter__section
+                            .counter__time-label Remaining Time :
+                            input.counter__time-input(type="text", value="01:49:55")
+
+                        .counter__divider
+
+                        .counter__calc
+                            button.counter__calc-button(type="button") Show Calculator
+
+            .main__test
+                .test
+                    .test__progress(style="width: 75%")
+                        .test__progress-point: span 75%
+
+                    .test__content
+                        .test__count 100 of 180
+
+                        .test__question
+                            | A client’s caregiver is learning how to care for a client’s wound and
+                            | drain. Which techique of cleansing, if taught to the caregiver, would
+                            | decrease the chance of the client developing an infection?
+
+                        label.radio.test__answer
+                            input.radio__input(type="radio" name="radio")
+                            .radio__label
+                                .radio__letter A
+                                span
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+
+                        label.radio.test__answer
+                            input.radio__input(type="radio" name="radio")
+                            .radio__label
+                                .radio__letter B
+                                span
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+
+                        label.radio.test__answer
+                            input.radio__input(type="radio" name="radio")
+                            .radio__label
+                                .radio__letter C
+                                span
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+
+                        label.radio.test__answer
+                            input.radio__input(type="radio" name="radio")
+                            .radio__label
+                                .radio__letter D
+                                span
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+
+                        label.radio.test__answer
+                            input.radio__input(type="radio" name="radio")
+                            .radio__label
+                                .radio__letter D
+                                span
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+
+                        label.radio.test__answer
+                            input.radio__input(type="radio" name="radio")
+                            .radio__label
+                                .radio__letter D
+                                span
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    | eium tempor.
+
+                    .test__control
+                        a.test__feedback(href="#") Feedback / Problems
+
+                        .test__control-buttons
+                            button.button.test__button(type="button") Submit & Continue
+                            button.button.test__button(type="button") Submit & Pause/Leave Exam
+

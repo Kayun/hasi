@@ -1,0 +1,45 @@
+.radio
+    display: inline-block
+
+    &__input
+        absolute()
+        opacity: 0
+
+        &:checked + .radio__label:before
+            background-color: $blue-color
+            border-color: $blue-color
+
+    &__letter
+        vertically-align()
+        absolute: left 20px
+
+    &__label
+        relative()
+        padding-left: rem(45px)
+        line-height:  rem(15px)
+        cursor: pointer
+
+        &:before
+            size: 15px
+            rounded()
+            border: 1px solid #b4b4b4
+            content: ''
+            vertically-align()
+            absolute: left 0
+            transition()
+            will-change: opacity
+
+        &:after
+            size: 5px
+            z-index: 1
+            rounded()
+            background-color: #fff
+            content: ''
+            vertically-align()
+            absolute: left 5px
+
+        &:hover
+
+            &:before
+                border-color: $blue-color
+                opacity: .8

@@ -1,0 +1,77 @@
+.header
+    size: 100%
+    background-color: $blue-color
+    color: #fff
+
+    &__inner
+        margin: 0 auto
+        padding: rem(11px) rem(74px)
+        max-width: rem(1280px)
+
+        +between('m', 'l')
+            padding-left: rem(30px)
+            padding-right: rem(30px)
+
+        +below('s')
+            padding-left: rem(20px)
+            padding-right: rem(20px)
+
+    &__exit
+        relative()
+        display: inline-block
+        padding-right: rem(25px)
+        line-height: rem(18px)
+        font-weight: 700
+        min-height: rem(18px)
+        float: right
+        color: #fff
+        text-decoration: none
+        hover-fade: .8
+        transition: opacity .3s ease
+        will-change: opacity
+
+        +below(460px)
+            padding-right: rem(18px)
+
+        &:before
+            absolute: top 0 right 0
+            sprite2x($enter)
+            content: ''
+
+        &-text
+
+            +below(460px)
+                display: none
+
+    &__user
+        relative()
+        display: inline-block
+        padding-left: rem(22px)
+        line-height: rem(18px)
+
+        &:before
+            absolute: top 0 left 0
+            sprite2x($person)
+            content: ''
+
+        &-divider
+
+            +below(460px)
+                display: none
+
+        &-name
+            font-weight: 700
+
+        &-email
+            color: #fff
+            text-decoration: none
+            hover-fade: .8
+            transition: opacity .3s ease
+            will-change: opacity
+
+            +below(460px)
+                display: none
+
+
+
+

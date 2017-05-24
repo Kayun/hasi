@@ -1,0 +1,37 @@
+.main
+    display: flex
+    flex-flow: column nowrap
+    height: 100%
+    padding-top: rem(16px)
+
+    &__logo
+        size: rem(239px) rem(95px)
+
+    &__header
+        flex: 0 0 auto
+
+    &__outer
+        padding-top: rem(48px)
+        display: flex
+        flex-flow: row nowrap
+        flex: 1 0 auto
+
+        +below(768px)
+            flex-direction: column
+
+    &__counter
+        padding-left: rem(20px)
+        padding-top: rem(37px)
+        padding-bottom: rem(83px)
+        flex: 0 0 263px
+
+        +below(768px)
+            padding-left: 0
+            flex: 0 0 auto
+            padding-top: rem(20px)
+            padding-bottom: rem(20px)
+
+    &__test
+        display: flex
+        flex: 1 1 auto
+        order: -1

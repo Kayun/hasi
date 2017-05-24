@@ -1,0 +1,57 @@
+.page
+    relative()
+    size: 100%
+    min-height: 100%
+    font-size: unit($font-size, 'px')
+
+    &__header
+        absolute: top 0 left 0
+        size: 100% rem(40px)
+
+    &__container
+        height: 100%
+        padding-top: rem(40px)
+        padding-bottom: rem(30px)
+
+        +below(650px)
+            padding-bottom: rem(40px)
+
+    &__content
+        background-color: $page-color
+        padding-bottom: rem(60px)
+
+        +below(768px)
+            padding-bottom: rem(20px)
+
+    &__footer
+        absolute: bottom 0 left 0
+        size: 100% rem(30px)
+
+        +below(650px)
+            height: rem(40px)
+
+.container
+    margin: 0 auto
+    padding-right: rem(37px)
+    padding-left: rem(23px)
+    height: 100%
+    max-width: 1000px
+
+    +below('l')
+        width: 100%
+        max-width: none
+        margin: 0
+
+    +between('m', 'l')
+        padding-left: rem(30px)
+        padding-right: rem(30px)
+
+    +below('s')
+        padding-left: rem(20px)
+        padding-right: rem(20px)
+
+@media screen and (max-height: 760px)
+
+     .page
+         height: auto
+

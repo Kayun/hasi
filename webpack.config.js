@@ -7,7 +7,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
-const rupture = require('rupture')
+const axis = require('axis');
+const rupture = require('rupture');
 
 const SRC_DIR = path.resolve(__dirname, 'src')
 
@@ -26,7 +27,8 @@ let templates = () => {
 module.exports = {
   context: SRC_DIR,
   entry: [
-    './styles/index.styl'
+    './styles/index.styl',
+    './scripts/index.js'
   ],
   output: {
     filename: 'assets/[name].js',
@@ -47,7 +49,7 @@ module.exports = {
     rules: [
       {
         test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
+        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
@@ -70,16 +72,25 @@ module.exports = {
             {
               loader: 'stylus-loader',
               options: {
-                use: [rupture()]
+                use: [rupture(), axis()]
               }
             }
           ]
-        })
+        }))
       },
       {
         test: /\.pug$/,
         use: {
           loader: 'pug-loader'
+        }
+      },
+      {
+        test: /\.(jpg|jpeg|png)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/images/[name].[ext]'
+          }
         }
       }
     ]

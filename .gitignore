@@ -107,3 +107,4 @@ typings/
 .env
 /tmp/
 /src/server/assets.json
+/src/styles/helpers/sprite.styl

@@ -1,0 +1,93 @@
+.counter
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, .19)
+    padding: rem(15px) rem(10px) rem(8px)
+    border: 1px solid $page-bg-color
+    background-color: #f2f2f2
+
+    +between(500px, 768px)
+        display: flex
+        flex-flow: row nowrap
+
+    &__section
+        min-height: rem(124px)
+
+        +between(500px, 768px)
+            min-height: rem(50px)
+
+    &__title
+        color: $blue-color
+        font-weight: 700
+
+    &__info
+        color: $gray-font-color
+        margin-top: rem(16px)
+        line-height: rem(14px)
+        letter-spacing: 0
+
+    &__divider
+        border-bottom: 1px solid $page-bg-color
+        border-top: 1px solid #fff
+
+        +between(500px, 768px)
+            display: none
+
+    &__col
+
+        +between(500px, 768px)
+            flex: 1 0 auto
+
+    &__time
+        margin: 0 auto
+        padding-top: rem(55px)
+        padding-bottom: rem(46px)
+        text-align: center
+        width: rem(140px)
+
+        +between(500px, 768px)
+            padding: 0
+
+        +below('xs')
+            width: 75%
+
+        &-label
+            margin-bottom: rem(12px)
+            color: #515251
+            font-weight: 700
+
+        &-input
+            color: #515251
+            padding: 0
+            line-height: rem(23px)
+            border: 1px solid #515251
+            text-align: center
+            width: 100%
+            outline: none
+
+            +below('xs')
+                line-height: rem(40px)
+                fs: 16px
+
+
+    &__calc
+        padding-top: rem(8px)
+        text-align: center
+
+        &-button
+            relative()
+            padding: 0
+            padding-left: rem(24px)
+            line-height: rem(16px)
+            border: none
+            background-color: transparent
+            color: $blue-color
+            outline: none
+            letter-spacing: .4px
+            hover-fade: .8
+            transition: opacity .3s ease
+            will-change: opacity
+            cursor: pointer
+
+            &:before
+                absolute: top 0 left 0
+                content: ''
+                sprite2x($round_arrow_right);

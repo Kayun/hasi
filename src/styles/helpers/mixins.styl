@@ -1,0 +1,19 @@
+size($width, $height = $width) {
+    width: $width
+    height: $height
+}
+
+sprite2x($sprite) {
+    spriteImage($sprite)
+    background-position: ($sprite[2] / 2) ($sprite[3] / 2);
+    width: ($sprite[4] / 2)
+    height: ($sprite[5] / 2)
+    background-size: ($spritesheet_width / 2) ($spritesheet_height / 2)
+}
+
+clearfix()
+    &:after
+        width: 100%
+        display: table
+        content: ''
+
