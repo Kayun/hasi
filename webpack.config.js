@@ -10,7 +10,8 @@ const SpritesmithPlugin = require('webpack-spritesmith');
 const axis = require('axis');
 const rupture = require('rupture');
 
-const SRC_DIR = path.resolve(__dirname, 'src')
+const SRC_DIR = path.resolve(__dirname, 'src');
+const PUBLIC_PATH = '/hasi/public/';
 
 let templates = () => {
   let templatesPath = `${SRC_DIR}/templates/pages`;
@@ -33,7 +34,7 @@ module.exports = {
   output: {
     filename: 'assets/[name].js',
     path: path.resolve(__dirname, 'public'),
-    publicPath: '/hasi/public/'
+    publicPath: PUBLIC_PATH
   },
   resolve: {
     extensions: [ '.js', '.styl', '.pug' ],
@@ -126,7 +127,7 @@ module.exports = {
         css: path.resolve(__dirname, 'src/styles/helpers/sprite.styl')
       },
       apiOptions: {
-        cssImageRef: "/assets/images/sprite.png"
+        cssImageRef: `${PUBLIC_PATH}/assets/images/sprite.png`
       }
     })
   ].concat(templates()),
