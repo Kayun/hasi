@@ -1,0 +1,7 @@
+{
+  "assets\\images\\logo.png": "/public/assets/images/logo.png",
+  "main.css": "/public/assets/styles/common.css",
+  "main.css.map": "/public/assets/styles/common.css.map",
+  "main.js": "/public/assets/main.js",
+  "main.js.map": "/public/assets/main.js.map"
+}
