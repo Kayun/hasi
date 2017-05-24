@@ -33,7 +33,7 @@ module.exports = {
   output: {
     filename: 'assets/[name].js',
     path: path.resolve(__dirname, 'public'),
-    publicPath: '/'
+    publicPath: '/hasi/public/'
   },
   resolve: {
     extensions: [ '.js', '.styl', '.pug' ],
