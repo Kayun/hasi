@@ -14,6 +14,9 @@
         +between(500px, 768px)
             min-height: rem(50px)
 
+        +below(500px)
+            min-height: auto
+
     &__title
         color: $blue-color
         font-weight: 700
@@ -23,6 +26,10 @@
         margin-top: rem(16px)
         line-height: rem(14px)
         letter-spacing: 0
+
+        +below(500px)
+            margin-top: rem(16px)
+            margin-bottom: rem(20px)
 
     &__divider
         border-bottom: 1px solid $page-bg-color
@@ -48,6 +55,10 @@
 
         +below('xs')
             width: 75%
+
+        +below(500px)
+            padding-top: rem(20px)
+            padding-bottom: rem(20px)
 
         &-label
             margin-bottom: rem(12px)
