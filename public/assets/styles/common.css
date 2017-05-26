@@ -460,8 +460,8 @@ body {
   height: 100%;
 }
 html {
-  color: #000;
-  font-family: Verdana, Geneva, sans-serif;
+  color: #333;
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
   background-color: #d0d0d0;
   letter-spacing: -0.15px;
 }
@@ -543,10 +543,11 @@ html {
 }
 .button {
   padding: 0 0.8125rem;
-  line-height: 1.1875rem;
+  line-height: 1.125rem;
   border: none;
   background-color: #347bbc;
   color: #fff;
+  font-size: 11.5px;
   border-radius: 1px;
   cursor: pointer;
   letter-spacing: 0.55px;
@@ -645,6 +646,11 @@ html {
     min-height: 3.125rem;
   }
 }
+@media only screen and (max-width: 31.25em) {
+  .counter__section {
+    min-height: auto;
+  }
+}
 .counter__title {
   color: #347bbc;
   font-weight: 700;
@@ -654,6 +660,12 @@ html {
   margin-top: 1rem;
   line-height: 0.875rem;
   letter-spacing: 0;
+}
+@media only screen and (max-width: 31.25em) {
+  .counter__info {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+  }
 }
 .counter__divider {
   border-bottom: 1px solid #d0d0d0;
@@ -686,6 +698,12 @@ html {
 @media only screen and (max-width: 25em) {
   .counter__time {
     width: 75%;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .counter__time {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 }
 .counter__time-label {
@@ -932,7 +950,7 @@ html {
   letter-spacing: 0.05px;
 }
 .test__answer + .test__answer {
-  margin-top: 0.125rem;
+  margin-top: 0.5rem;
 }
 .test__control {
   padding-top: 0.625rem;
@@ -1034,6 +1052,13 @@ html {
 .main__logo {
   width: 14.9375rem;
   height: 5.9375rem;
+  margin-bottom: 0.625rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .main__logo {
+    width: 10.1875rem;
+    height: 4.0625rem;
+  }
 }
 .main__header {
   position: relative;

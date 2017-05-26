@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "98acd512192c93bec8cb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "360a61782cf3e147bb44"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1351,7 +1351,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 // removed by extract-text-webpack-plugin
     if(true) {
-      // 1495807529997
+      // 1495815026579
       const cssReload = __webpack_require__(4)({"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -1363,9 +1363,36 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /***/ (function(module, exports) {
 
 var answers = Array.prototype.slice.apply(document.querySelectorAll('.js-radio'));
+var form = document.querySelector('.js-question-form');
+var submit = form.querySelector('.js-question-submit');
+
+function submitForm(event) {
+  event.preventDefault();
+  console.log(event);
+  answers.forEach(function (answer) {
+    if (answer.checked) {
+      event.target.submit();
+      return false;
+    }
+  });
+}
+
+form.addEventListener('submit', submitForm);
+submit.addEventListener('click', function () {
+  var event = new Event('submit');
+  form.dispatchEvent(event);
+});
 
 document.addEventListener('keypress', function (event) {
-  var char = String.fromCharCode(event.keyCode).toUpperCase();
+  var code = event.keyCode;
+  var char = String.fromCharCode(code).toUpperCase();
+
+  if (code === 13) {
+    var event = new Event('submit');
+    form.dispatchEvent(event);
+    return false;
+  }
+
   answers.forEach(function (answer) {
     var data = answer.dataset.letter;
     if (data === char) {
