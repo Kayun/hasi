@@ -8,7 +8,15 @@
         size: rem(239px) rem(95px)
 
     &__header
+        relative()
         flex: 0 0 auto
+
+    &__date
+        absolute: top rem(50px) right 0
+        color: #797979
+
+        +below(460px)
+            position: static
 
     &__outer
         padding-top: rem(48px)
@@ -18,6 +26,9 @@
 
         +below(768px)
             flex-direction: column
+
+        +below(460px)
+            padding-top: rem(36px)
 
     &__counter
         padding-left: rem(20px)

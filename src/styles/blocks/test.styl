@@ -35,12 +35,12 @@
         font-weight: 700
         padding-top: rem(27px)
         padding-bottom: rem(15px)
-        padding-right: rem(35px)
+        max-width: 640px
         line-height: rem(17px)
         letter-spacing: -.1px
 
     &__answer
-        padding-right: rem(230px)
+        max-width: 450px
         letter-spacing: 0.05px
 
     &__answer + &__answer
@@ -72,9 +72,8 @@
         margin-top: rem(4px)
         line-height: rem(13px)
         border-bottom: 1px solid $blue-color
-        hover-fade: .8
-        transition: opacity .3s ease
-        will-change: opacity
+        hover-color: darken($blue-color, 20%) true
+        transition: color .3s ease
 
         &:before
             absolute: top rem(1px) left rem(-15px)

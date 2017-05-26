@@ -4,6 +4,10 @@ block content
     .main
         .main__header
             img.main__logo(src=require("../../images/logo.png"))
+            .main__date
+                strong Date :
+                = " "
+                | Jan 17, 2017
 
         .main__outer
 
@@ -38,7 +42,7 @@ block content
                             | decrease the chance of the client developing an infection?
 
                         label.radio.test__answer
-                            input.radio__input(type="radio" name="radio")
+                            input.radio__input.js-radio(type="radio" name="radio" data-letter="A" tabindex="1")
                             .radio__label
                                 .radio__letter A
                                 span
@@ -46,7 +50,7 @@ block content
                                     | eium tempor.
 
                         label.radio.test__answer
-                            input.radio__input(type="radio" name="radio")
+                            input.radio__input.js-radio(type="radio" name="radio" data-letter="B" tabindex="2")
                             .radio__label
                                 .radio__letter B
                                 span
@@ -54,7 +58,7 @@ block content
                                     | eium tempor.
 
                         label.radio.test__answer
-                            input.radio__input(type="radio" name="radio")
+                            input.radio__input.js-radio(type="radio" name="radio" data-letter="C" tabindex="3")
                             .radio__label
                                 .radio__letter C
                                 span
@@ -62,7 +66,7 @@ block content
                                     | eium tempor.
 
                         label.radio.test__answer
-                            input.radio__input(type="radio" name="radio")
+                            input.radio__input.js-radio(type="radio" name="radio" data-letter="D" tabindex="4")
                             .radio__label
                                 .radio__letter D
                                 span
