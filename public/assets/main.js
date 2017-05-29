@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "360a61782cf3e147bb44"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4275759ecf76b6360547"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1351,7 +1351,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 // removed by extract-text-webpack-plugin
     if(true) {
-      // 1495815026579
+      // 1496065865625
       const cssReload = __webpack_require__(4)({"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

@@ -578,7 +578,7 @@ html {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute;
-  left: 20px;
+  left: 1.125rem;
 }
 .radio__label {
   position: relative;
@@ -739,7 +739,7 @@ html {
   background-color: transparent;
   color: #347bbc;
   outline: none;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.4px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   cursor: pointer;
@@ -878,11 +878,6 @@ html {
 .header__user-email {
   color: #fff;
   text-decoration: none;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-.header__user-email:hover {
-  color: #e6e6e6;
 }
 @media only screen and (max-width: 28.75em) {
   .header__user-email {
@@ -941,7 +936,7 @@ html {
   font-weight: 700;
   padding-top: 1.6875rem;
   padding-bottom: 0.9375rem;
-  max-width: 640px;
+  max-width: 39.6875rem;
   line-height: 1.0625rem;
   letter-spacing: -0.1px;
 }
@@ -950,7 +945,7 @@ html {
   letter-spacing: 0.05px;
 }
 .test__answer + .test__answer {
-  margin-top: 0.5rem;
+  margin-top: 0.125rem;
 }
 .test__control {
   padding-top: 0.625rem;
