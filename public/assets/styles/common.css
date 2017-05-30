@@ -464,6 +464,7 @@ html {
   font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
   background-color: #d0d0d0;
   letter-spacing: -0.15px;
+  -webkit-font-smoothing: antialiased;
 }
 .page {
   position: relative;
@@ -547,10 +548,10 @@ html {
   border: none;
   background-color: #347bbc;
   color: #fff;
-  font-size: 11.5px;
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  font-size: 11px;
   border-radius: 1px;
   cursor: pointer;
-  letter-spacing: 0.55px;
   outline: none;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
@@ -578,17 +579,18 @@ html {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute;
-  left: 1.125rem;
+  left: 1rem;
+  margin-top: -0.125rem;
 }
 .radio__label {
   position: relative;
-  padding-left: 2.8125rem;
-  line-height: 0.9375rem;
+  padding-left: 2.6875rem;
+  line-height: 0.875rem;
   cursor: pointer;
 }
 .radio__label:before {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   border-radius: 999px;
   border: 1px solid #b4b4b4;
   content: '';
@@ -603,8 +605,8 @@ html {
   will-change: opacity;
 }
 .radio__label:after {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   z-index: 1;
   border-radius: 999px;
   background-color: #fff;
@@ -716,6 +718,7 @@ html {
   padding: 0;
   line-height: 1.4375rem;
   border: 1px solid #515251;
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
   text-align: center;
   width: 100%;
   outline: none;
@@ -733,13 +736,14 @@ html {
 .counter__calc-button {
   position: relative;
   padding: 0;
-  padding-left: 1.5rem;
+  padding-left: 1.4375rem;
   line-height: 1rem;
   border: none;
   background-color: transparent;
   color: #347bbc;
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  letter-spacing: 0;
   outline: none;
-  letter-spacing: 0.4px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   cursor: pointer;
@@ -935,17 +939,17 @@ html {
 .test__question {
   font-weight: 700;
   padding-top: 1.6875rem;
-  padding-bottom: 0.9375rem;
-  max-width: 39.6875rem;
-  line-height: 1.0625rem;
-  letter-spacing: -0.1px;
+  padding-bottom: 1.5625rem;
+  max-width: 40rem;
+  line-height: 0.875rem;
+  letter-spacing: -0.05px;
 }
 .test__answer {
-  max-width: 450px;
+  max-width: 28.125rem;
   letter-spacing: 0.05px;
 }
 .test__answer + .test__answer {
-  margin-top: 0.125rem;
+  margin-top: 0.25rem;
 }
 .test__control {
   padding-top: 0.625rem;
@@ -986,6 +990,8 @@ html {
   position: relative;
   float: right;
   color: #347bbc;
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  letter-spacing: 0;
   text-decoration: none;
   margin-left: 0.9375rem;
   margin-top: 0.25rem;
