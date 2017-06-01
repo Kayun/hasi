@@ -936,6 +936,7 @@ html {
 .test__count {
   margin-top: 0.4375rem;
   font-weight: 700;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 .test__question {
   font-weight: 700;
