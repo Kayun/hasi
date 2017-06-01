@@ -464,7 +464,6 @@ html {
   font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
   background-color: #d0d0d0;
   letter-spacing: -0.15px;
-  -webkit-font-smoothing: antialiased;
 }
 .page {
   position: relative;
