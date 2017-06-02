@@ -80,7 +80,7 @@
                 fs: 16px
 
 
-    &__calc
+    &__control
         padding-top: rem(8px)
         text-align: center
 
@@ -102,4 +102,12 @@
             &:before
                 absolute: top 0 left 0
                 content: ''
-                sprite2x($round_arrow_right);
+                sprite2x($round_arrow_right)
+
+            &_active
+
+                &:before
+                    sprite2x($round_arrow_down)
+
+    &__calc
+        padding-bottom: rem(108px)

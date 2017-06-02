@@ -1,0 +1,19 @@
+.counter
+    .counter__calc
+        include calculator
+
+    .counter__col(hidden)
+        .counter__title Multiple-Choice Single-Answer
+        .counter__info.counter__section Select your answer from the options on the left.
+        .counter__divider
+
+    .counter__col
+        .counter__time.counter__section(hidden)
+            .counter__time-label Remaining Time :
+            input.counter__time-input(type="text", value="01:49:55")
+
+        .counter__divider
+
+        .counter__control
+            button.counter__control-button(type="button", hidden) Show Calculator
+            button.counter__control-button.counter__control-button_active(type="button") Hide Calculator

@@ -12,21 +12,7 @@ block content
         .main__outer
 
             .main__counter
-                .counter
-                    .counter__col
-                        .counter__title Multiple-Choice Single-Answer
-                        .counter__info.counter__section Select your answer from the options on the left.
-                        .counter__divider
-
-                    .counter__col
-                        .counter__time.counter__section
-                            .counter__time-label Remaining Time :
-                            input.counter__time-input(type="text", value="01:49:55")
-
-                        .counter__divider
-
-                        .counter__calc
-                            button.counter__calc-button(type="button") Show Calculator
+                include ../blocks/counter
 
             .main__test
                 form.test.js-question-form(href="#")
