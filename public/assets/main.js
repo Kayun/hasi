@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f2e2ce729f8a8e2ff7e4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "101710d90501f95f4ff8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -706,7 +706,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(18)(__webpack_require__.s = 18);
+/******/ 	return hotCreateRequire(19)(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1343,32 +1343,30 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)(module), __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)(module), __webpack_require__(17)))
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
-    if(true) {
-      // 1496319153964
-      const cssReload = __webpack_require__(4)({"fileMap":"{fileName}"});
-      module.hot.dispose(cssReload);
-      module.hot.accept(undefined, cssReload);
-    }
-  
+"use strict";
 
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
+
+var _calculator = __webpack_require__(4);
 
 var answers = Array.prototype.slice.apply(document.querySelectorAll('.js-radio'));
+var fontSwitch = Array.prototype.slice.apply(document.querySelectorAll('.js-font-switch'));
 var form = document.querySelector('.js-question-form');
+var font = document.querySelector('.js-font');
 var submit = form.querySelector('.js-question-submit');
+var aside = document.querySelector('.js-aside');
+var calculator = aside.querySelector('.js-calculator');
+
+var calcInstance = void 0;
 
 function submitForm(event) {
   event.preventDefault();
-  console.log(event);
+
   answers.forEach(function (answer) {
     if (answer.checked) {
       event.target.submit();
@@ -1376,6 +1374,63 @@ function submitForm(event) {
     }
   });
 }
+
+fontSwitch.forEach(function (switcher) {
+  switcher.addEventListener('click', function (event) {
+    var target = event.target;
+
+    if (!target.closest('.font-switch__option')) return;
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = switcher.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var option = _step.value;
+
+        option.classList.remove('_active');
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    var size = target.dataset.size;
+
+    font.style.fontSize = size + 'px';
+    target.classList.add('_active');
+  });
+});
+
+aside.addEventListener('click', function (event) {
+  var target = event.target;
+
+  if (!target.closest('.js-calc-mode')) return;
+
+  target.classList.toggle('_active');
+  aside.classList.toggle('counter_mode_calc');
+
+  if (target.classList.contains('_active')) {
+    target.innerHTML = target.dataset.hideText;
+    calcInstance = new _calculator.Calculator(calculator);
+  } else {
+    target.innerHTML = target.dataset.showText;
+    if (calcInstance) {
+      calcInstance.destroy();
+      calcInstance = null;
+    }
+  }
+});
 
 form.addEventListener('submit', submitForm);
 submit.addEventListener('click', function () {
@@ -1388,8 +1443,8 @@ document.addEventListener('keypress', function (event) {
   var char = String.fromCharCode(code).toUpperCase();
 
   if (code === 13) {
-    var event = new Event('submit');
-    form.dispatchEvent(event);
+    var _event = new Event('submit');
+    form.dispatchEvent(_event);
     return false;
   }
 
@@ -1399,15 +1454,284 @@ document.addEventListener('keypress', function (event) {
       answer.checked = true;
       return false;
     }
-  })
-})
+  });
+});
 
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// removed by extract-text-webpack-plugin
+    if(true) {
+      // 1496689866660
+      const cssReload = __webpack_require__(5)({"fileMap":"{fileName}"});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var normalizeUrl = __webpack_require__(6);
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Calculator = exports.Calculator = function () {
+  function Calculator(element) {
+    var _this = this;
+
+    _classCallCheck(this, Calculator);
+
+    this.element = element;
+    this.memoryIndicator = element.querySelector('.js-calculator-memory');
+    this.display = element.querySelector('.js-calculator-display');
+    this.keyboard = element.querySelector('.js-calculator-keyboard');
+    this.capacity = 10;
+    this.isImputMode = true;
+    this.operand = {
+      left: null,
+      right: null
+    };
+    this.currentAction = null;
+    this.memory = null;
+
+    console.log(this.memoryIndicator);
+
+    var BUTTON_TYPES = {
+      input: 0,
+      action: 1,
+      service: -1
+    };
+
+    var SERVICE_TYPE = {
+      C: this.clear.bind(this),
+      CE: this.clearEntry.bind(this),
+      backspace: this.backspace.bind(this),
+      '=': this.result.bind(this),
+      MC: this.memoryClear.bind(this),
+      MS: this.memorySave.bind(this),
+      MR: this.memoryReturn.bind(this),
+      'M+': this.memoryAdd.bind(this)
+    };
+
+    var ACTION_TYPE = {
+      '/': this.division.bind(this),
+      '*': this.multiplication.bind(this),
+      '-': this.subtraction.bind(this),
+      '+': this.addition.bind(this),
+      'sqrt': this.sqrt.bind(this),
+      '%': this.remainder.bind(this),
+      '1/x': this.fraction.bind(this)
+    };
+
+    var SINGLE_OPERATION = ['sqrt', '1/x'];
+
+    var onClick = function onClick(event) {
+      var button = event.target;
+      if (!button.closest('.calculator__button')) return false;
+
+      var type = +button.dataset.type;
+      var value = button.dataset.value;
+
+      switch (type) {
+        case BUTTON_TYPES.service:
+          SERVICE_TYPE[value]();
+          break;
+
+        case BUTTON_TYPES.input:
+          _this.input(value);
+          break;
+
+        case BUTTON_TYPES.action:
+          _this.action(ACTION_TYPE[value], SINGLE_OPERATION.indexOf(value) !== -1);
+          break;
+      }
+    };
+
+    this.keyboard.addEventListener('click', onClick);
+
+    this.destroy = function () {
+      _this.keyboard.removeEventListener('click', onClick);
+    };
+  }
+
+  _createClass(Calculator, [{
+    key: 'input',
+    value: function input(value) {
+      if (value === null) return false;
+
+      if ((this.display.value === '0' || !this.isImputMode) && value !== '.' && value !== '±') {
+        this.display.value = '';
+        this.isImputMode = true;
+      }
+
+      var displayValue = this.display.value;
+
+      if (value === '.' && (displayValue === '0' || /\./.test(displayValue))) {
+        return false;
+      }
+      if (value === '±') {
+        this.display.value = -parseFloat(displayValue);
+        return false;
+      }
+
+      this.display.value = displayValue + value;
+    }
+  }, {
+    key: 'action',
+    value: function action(fn) {
+      var isSingle = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      this.operand.left = parseFloat(this.display.value);
+
+      if (isSingle) {
+        this.display.value = fn();
+        return false;
+      }
+
+      this.currentAction = fn;
+      this.isImputMode = false;
+    }
+  }, {
+    key: 'division',
+    value: function division() {
+      var _operand = this.operand,
+          left = _operand.left,
+          right = _operand.right;
+
+      return left / right;
+    }
+  }, {
+    key: 'addition',
+    value: function addition() {
+      var _operand2 = this.operand,
+          left = _operand2.left,
+          right = _operand2.right;
+
+      return left + right;
+    }
+  }, {
+    key: 'multiplication',
+    value: function multiplication() {
+      var _operand3 = this.operand,
+          left = _operand3.left,
+          right = _operand3.right;
+
+      return left * right;
+    }
+  }, {
+    key: 'subtraction',
+    value: function subtraction() {
+      var _operand4 = this.operand,
+          left = _operand4.left,
+          right = _operand4.right;
+
+      return left - right;
+    }
+  }, {
+    key: 'fraction',
+    value: function fraction() {
+      var left = this.operand.left;
+
+      return 1 / left;
+    }
+  }, {
+    key: 'sqrt',
+    value: function sqrt() {
+      var left = this.operand.left;
+
+      return Math.sqrt(left);
+    }
+  }, {
+    key: 'remainder',
+    value: function remainder() {
+      var _operand5 = this.operand,
+          left = _operand5.left,
+          right = _operand5.right;
+
+      return left % right;
+    }
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this.display.value = 0;
+      this.currentAction = null;
+      this.operand.left = null;
+      this.operand.right = null;
+    }
+  }, {
+    key: 'clearEntry',
+    value: function clearEntry() {
+      this.display.value = 0;
+    }
+  }, {
+    key: 'backspace',
+    value: function backspace() {
+      this.display.value = this.display.value.slice(0, -1);
+      if (this.display.value === '' || this.display.value === '-') {
+        this.display.value = 0;
+      }
+    }
+  }, {
+    key: 'memoryClear',
+    value: function memoryClear() {
+      this.memory = null;
+      this.indicatorVisibility(false);
+    }
+  }, {
+    key: 'memorySave',
+    value: function memorySave() {
+      this.memory = parseFloat(this.display.value);
+      this.indicatorVisibility(true);
+    }
+  }, {
+    key: 'memoryReturn',
+    value: function memoryReturn() {
+      this.display.value = 0;
+      this.input(this.memory);
+    }
+  }, {
+    key: 'memoryAdd',
+    value: function memoryAdd() {
+      this.memory += parseFloat(this.display.value);
+      this.indicatorVisibility(true);
+    }
+  }, {
+    key: 'indicatorVisibility',
+    value: function indicatorVisibility(isVisible) {
+      this.memoryIndicator.style.display = isVisible ? 'block' : 'none';
+    }
+  }, {
+    key: 'result',
+    value: function result() {
+      if (!this.currentAction) {
+        return false;
+      }
+      this.operand.right = parseFloat(this.display.value);
+
+      this.display.value = this.currentAction();
+      this.isImputMode = true;
+      this.currentAction = null;
+    }
+  }]);
+
+  return Calculator;
+}();
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeUrl = __webpack_require__(7);
 
 var getCurrentScriptUrl = function() {
   var src;
@@ -1486,7 +1810,7 @@ module.exports = function(options) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1500,16 +1824,16 @@ module.exports = function (x) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var url = __webpack_require__(14);
+var url = __webpack_require__(15);
 var punycode = __webpack_require__(1);
-var queryString = __webpack_require__(8);
-var prependHttp = __webpack_require__(7);
-var sortKeys = __webpack_require__(12);
+var queryString = __webpack_require__(9);
+var prependHttp = __webpack_require__(8);
+var sortKeys = __webpack_require__(13);
 var objectAssign = __webpack_require__(0);
 
 var DEFAULT_PORTS = {
@@ -1668,7 +1992,7 @@ module.exports = function (str, opts) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1689,12 +2013,12 @@ module.exports = function (url) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strictUriEncode = __webpack_require__(13);
+var strictUriEncode = __webpack_require__(14);
 var objectAssign = __webpack_require__(0);
 
 function encoderForArrayFormat(opts) {
@@ -1901,7 +2225,7 @@ exports.stringify = function (obj, opts) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1992,7 +2316,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2084,23 +2408,23 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.decode = exports.parse = __webpack_require__(9);
-exports.encode = exports.stringify = __webpack_require__(10);
-
-
-/***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var isPlainObj = __webpack_require__(5);
+
+exports.decode = exports.parse = __webpack_require__(10);
+exports.encode = exports.stringify = __webpack_require__(11);
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var isPlainObj = __webpack_require__(6);
 
 module.exports = function (obj, opts) {
 	if (!isPlainObj(obj)) {
@@ -2146,7 +2470,7 @@ module.exports = function (obj, opts) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2159,7 +2483,7 @@ module.exports = function (str) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2187,7 +2511,7 @@ module.exports = function (str) {
 
 
 var punycode = __webpack_require__(1);
-var util = __webpack_require__(15);
+var util = __webpack_require__(16);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -2262,7 +2586,7 @@ var protocolPattern = /^([a-z0-9.+-]+:)/i,
       'gopher:': true,
       'file:': true
     },
-    querystring = __webpack_require__(11);
+    querystring = __webpack_require__(12);
 
 function urlParse(url, parseQueryString, slashesDenoteHost) {
   if (url && util.isObject(url) && url instanceof Url) return url;
@@ -2898,7 +3222,7 @@ Url.prototype.parseHost = function() {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2921,7 +3245,7 @@ module.exports = {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var g;
@@ -2948,7 +3272,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -2976,11 +3300,11 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(2);
-module.exports = __webpack_require__(3);
+__webpack_require__(3);
+module.exports = __webpack_require__(2);
 
 
 /***/ })
