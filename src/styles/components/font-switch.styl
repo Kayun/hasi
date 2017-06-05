@@ -1,0 +1,53 @@
+.font-switch
+    font-weight: 700
+
+    &__option
+        display: inline-block
+        border-bottom: 1px solid transparent
+        line-height: 18px
+        vertical-align: baseline
+        cursor: pointer
+        transition: border-color .3s ease
+
+        & + ^[0..1]
+            margin-left: rem(8px)
+
+        &:hover
+            border-color: rgba($font-color, .5)
+
+        &._active
+            border-color: $font-color
+            pointer-events: none
+
+        &._size_11
+            fs: 11px
+            line-height: 15px
+
+        &._size_13
+            fs: 13px
+            line-height: 15px
+
+        &._size_15
+            fs: 15px
+
+    &._white
+        color: #ffffff
+
+        & ^[0]__option
+
+            &:hover
+                border-color: rgba(#fff, .5)
+
+            &._active
+                border-color: #ffffff
+
+    &._gray
+        color: #797979
+
+        & ^[0]__option
+
+            &:hover
+              border-color: rgba(#797979, .5)
+
+            &._active
+              border-color: #797979

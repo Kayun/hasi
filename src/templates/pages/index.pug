@@ -4,6 +4,7 @@ block content
     .main
         .main__header
             img.main__logo(src=require("../../images/logo.png"))
+            .main__font: +font-switch()._gray
             .main__date
                 strong Date :
                 = " "
@@ -12,6 +13,7 @@ block content
         .main__outer
 
             .main__counter
+                .main__counter-font: +font-switch()
                 include ../blocks/counter
 
             .main__test
@@ -22,42 +24,43 @@ block content
                     .test__content
                         .test__count 100 of 180
 
-                        .test__question
-                            | A client’s caregiver is learning how to care for a client’s wound and
-                            | drain. Which techique of cleansing, if taught to the caregiver, would
-                            | decrease the chance of the client developing an infection?
+                        .js-font
+                            .test__question
+                                | A client’s caregiver is learning how to care for a client’s wound and
+                                | drain. Which techique of cleansing, if taught to the caregiver, would
+                                | decrease the chance of the client developing an infection?
 
-                        label.radio.test__answer
-                            input.radio__input.js-radio(type="radio" value="A" name="answer" data-letter="A" tabindex="1")
-                            .radio__label
-                                .radio__letter A
-                                span
-                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    | eium tempor.
+                            label.radio.test__answer
+                                input.radio__input.js-radio(type="radio" value="A" name="answer" data-letter="A" tabindex="1")
+                                .radio__label
+                                    .radio__letter A
+                                    span
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        | eium tempor.
 
-                        label.radio.test__answer
-                            input.radio__input.js-radio(type="radio" value="B" name="answer" data-letter="B" tabindex="2")
-                            .radio__label
-                                .radio__letter B
-                                span
-                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    | eium tempor.
+                            label.radio.test__answer
+                                input.radio__input.js-radio(type="radio" value="B" name="answer" data-letter="B" tabindex="2")
+                                .radio__label
+                                    .radio__letter B
+                                    span
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        | eium tempor.
 
-                        label.radio.test__answer
-                            input.radio__input.js-radio(type="radio" value="C" name="answer" data-letter="C" tabindex="3")
-                            .radio__label
-                                .radio__letter C
-                                span
-                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    | eium tempor.
+                            label.radio.test__answer
+                                input.radio__input.js-radio(type="radio" value="C" name="answer" data-letter="C" tabindex="3")
+                                .radio__label
+                                    .radio__letter C
+                                    span
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        | eium tempor.
 
-                        label.radio.test__answer
-                            input.radio__input.js-radio(type="radio" value="D" name="answer" data-letter="D" tabindex="4")
-                            .radio__label
-                                .radio__letter D
-                                span
-                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    | eium tempor.
+                            label.radio.test__answer
+                                input.radio__input.js-radio(type="radio" value="D" name="answer" data-letter="D" tabindex="4")
+                                .radio__label
+                                    .radio__letter D
+                                    span
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        | eium tempor.
 
                     .test__control
                         a.test__feedback(href="#") Feedback / Problems

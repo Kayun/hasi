@@ -181,7 +181,6 @@ export class Calculator {
   }
 
   indicatorVisibility(isVisible) {
-    console.log(this.memoryIndicator.style);
     this.memoryIndicator.style.display = isVisible ? 'block' : 'none';
   }
 

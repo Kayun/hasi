@@ -1,7 +1,9 @@
 import { Calculator } from './calculator';
 
 let answers = Array.prototype.slice.apply(document.querySelectorAll('.js-radio'));
+let fontSwitch = Array.prototype.slice.apply(document.querySelectorAll('.js-font-switch'));
 let form = document.querySelector('.js-question-form');
+let font = document.querySelector('.js-font');
 let submit = form.querySelector('.js-question-submit');
 let aside = document.querySelector('.js-aside');
 let calculator = aside.querySelector('.js-calculator');
@@ -18,6 +20,21 @@ function submitForm(event) {
     }
   });
 }
+
+fontSwitch.forEach(switcher => {
+  switcher.addEventListener('click', event => {
+    let target = event.target;
+
+    if (!target.closest('.font-switch__option')) return;
+    for (let option of switcher.children) {
+      option.classList.remove('_active');
+    }
+    let size = target.dataset.size;
+
+    font.style.fontSize = `${size}px`;
+    target.classList.add('_active');
+  })
+})
 
 aside.addEventListener('click', event => {
   let target = event.target;
