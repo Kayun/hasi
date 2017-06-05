@@ -1,43 +1,44 @@
-.calculator
+.calculator.js-calculator
 
     .calculator__display
-        input.calculator__input(type="text", value="0", readonly)
+        input.calculator__input.js-calculator-display(type="text", value="0", readonly)
+        .calculator__memory.js-calculator-memory M
 
-    .calculator__keyboard
+    .calculator__keyboard.js-calculator-keyboard
         .calculator__keyboard-service
-            button.calculator__button.calculator__button_size_big(type="button") BackSpace
-            button.calculator__button(type="button") CE
-            button.calculator__button(type="button") C
+            button.calculator__button.calculator__button_size_big(type="button", data-type="-1", data-value="backspace") BackSpace
+            button.calculator__button(type="button", data-type="-1", data-value="CE") CE
+            button.calculator__button(type="button", data-type="-1", data-value="C") C
 
 
         .calculator__keyboard-row
-            button.calculator__button(type="button") MC
-            button.calculator__button(type="button") 7
-            button.calculator__button(type="button") 8
-            button.calculator__button(type="button") 9
-            button.calculator__button(type="button") /
-            button.calculator__button(type="button") sqrt
+            button.calculator__button(type="button", data-type="-1", data-value="MC") MC
+            button.calculator__button(type="button", data-type="0", data-value="7") 7
+            button.calculator__button(type="button", data-type="0", data-value="8") 8
+            button.calculator__button(type="button", data-type="0", data-value="9") 9
+            button.calculator__button(type="button", data-type="1", data-value="/") /
+            button.calculator__button(type="button", data-type="1", data-value="sqrt") sqrt
 
         .calculator__keyboard-row
-            button.calculator__button(type="button") MR
-            button.calculator__button(type="button") 4
-            button.calculator__button(type="button") 5
-            button.calculator__button(type="button") 6
-            button.calculator__button(type="button") *
-            button.calculator__button(type="button") %
+            button.calculator__button(type="button", data-type="-1", data-value="MR") MR
+            button.calculator__button(type="button", data-type="0", data-value="4") 4
+            button.calculator__button(type="button", data-type="0", data-value="5") 5
+            button.calculator__button(type="button", data-type="0", data-value="6") 6
+            button.calculator__button(type="button", data-type="1", data-value="*") *
+            button.calculator__button(type="button", data-type="1", data-value="%") %
 
         .calculator__keyboard-row
-            button.calculator__button(type="button") MS
-            button.calculator__button(type="button") 1
-            button.calculator__button(type="button") 2
-            button.calculator__button(type="button") 3
-            button.calculator__button(type="button") -
-            button.calculator__button(type="button") 1/x
+            button.calculator__button(type="button", data-type="-1", data-value="MS") MS
+            button.calculator__button(type="button", data-type="0", data-value="1") 1
+            button.calculator__button(type="button", data-type="0", data-value="2") 2
+            button.calculator__button(type="button", data-type="0", data-value="3") 3
+            button.calculator__button(type="button", data-type="1", data-value="-") -
+            button.calculator__button(type="button", data-type="1", data-value="1/x") 1/x
 
         .calculator__keyboard-row
-            button.calculator__button(type="button") M+
-            button.calculator__button(type="button") 0
-            button.calculator__button(type="button") &#177;
-            button.calculator__button(type="button") .
-            button.calculator__button(type="button") +
-            button.calculator__button(type="button") =
+            button.calculator__button(type="button", data-type="-1", data-value="M+") M+
+            button.calculator__button(type="button", data-type="0", data-value="0") 0
+            button.calculator__button(type="button", data-type="0", data-value="±") ±
+            button.calculator__button(type="button", data-type="0", data-value=".") .
+            button.calculator__button(type="button", data-type="1", data-value="+") +
+            button.calculator__button(type="button", data-type="-1", data-value="=") =

@@ -4,6 +4,15 @@
     border: 1px solid $page-bg-color
     background-color: #f2f2f2
 
+    &_mode_calc
+
+        & ^[0]__hint
+        & ^[0]__time
+            display: none
+
+        & ^[0]__calc
+            display: block
+
     +between(500px, 768px)
         display: flex
         flex-flow: row nowrap
@@ -104,10 +113,11 @@
                 content: ''
                 sprite2x($round_arrow_right)
 
-            &_active
+            &._active
 
                 &:before
                     sprite2x($round_arrow_down)
 
     &__calc
-        padding-bottom: rem(108px)
+        display: none
+        padding-bottom: rem(107px)

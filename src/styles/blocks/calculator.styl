@@ -6,10 +6,16 @@ $input-text-color = #515251
     border-radius: 4px
 
     &__display
+        relative()
         padding: rem(3px)
 
+    &__memory
+        absolute: top rem(4px) left rem(11px)
+        line-height: rem(14px)
+        display: none
+
     &__input
-        padding: 0 rem(8px)
+        padding: 0 rem(8px) 0 rem(25px)
         width: 100%
         line-height: rem(28px)
         border: 1px solid #b3b3b3
@@ -52,7 +58,7 @@ $input-text-color = #515251
         fs: 9.8px
         text-align: center
         cursor: pointer
-        transition: background-color .3s ease
+        transition: background-color .3s ease, border-color .1s ease, box-shadow .1s ease
 
         &:hover
             background-color: darken(#fff, 2%)

@@ -1,19 +1,22 @@
-.counter
+.counter.js-aside
     .counter__calc
         include calculator
 
-    .counter__col(hidden)
+    .counter__col.counter__hint
         .counter__title Multiple-Choice Single-Answer
         .counter__info.counter__section Select your answer from the options on the left.
         .counter__divider
 
     .counter__col
-        .counter__time.counter__section(hidden)
+        .counter__time.counter__section
             .counter__time-label Remaining Time :
-            input.counter__time-input(type="text", value="01:49:55")
+            input.counter__time-input(type="text", value="01:49:55", readonly)
 
         .counter__divider
 
         .counter__control
-            button.counter__control-button(type="button", hidden) Show Calculator
-            button.counter__control-button.counter__control-button_active(type="button") Hide Calculator
+            button.counter__control-button.js-calc-mode(
+                type="button",
+                data-show-text="Show Calculator",
+                data-hide-text="Hide Calculator"
+            ) Show Calculator
