@@ -25,6 +25,7 @@ fontSwitch.forEach(switcher => {
   switcher.addEventListener('click', event => {
     let target = event.target;
 
+
     if (!target.closest('.font-switch__option')) return;
     for (let option of switcher.children) {
       option.classList.remove('_active');
