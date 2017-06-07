@@ -47,6 +47,11 @@
         +between(500px, 768px)
             display: none
 
+        &._descktop
+
+            +below(500px)
+                display: none
+
     &__col
 
         +between(500px, 768px)
@@ -117,6 +122,9 @@
 
                 &:before
                     sprite2x($round_arrow_down)
+
+            +below(768px)
+                display: none
 
     &__calc
         display: none
