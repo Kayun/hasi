@@ -22,6 +22,15 @@
         margin: 0 auto
         text-align: center
 
+        +below(768px)
+            width: auto
+            margin-right: 50px
+            text-align: right
+            padding-right: 20px
+
+        +below(460px)
+            margin-right: 20px
+
     &__exit
         relative()
         display: inline-block
@@ -54,6 +63,16 @@
         display: inline-block
         padding-left: rem(22px)
         line-height: rem(18px)
+        max-width: rem(400px)
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+
+        +below(900px)
+            max-width: 300px
+
+        +below(480px)
+            max-width: 280px
 
         &:before
             absolute: top 0 left 0

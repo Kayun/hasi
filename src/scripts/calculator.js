@@ -1,10 +1,12 @@
+import $ from 'jquery';
+
 export class Calculator {
 
   constructor(element) {
     this.element = element;
     this.memoryIndicator = element.querySelector('.js-calculator-memory');
     this.display = element.querySelector('.js-calculator-display');
-    this.keyboard = element.querySelector('.js-calculator-keyboard');
+    this.keyboard = $('.js-calculator-keyboard', element);
     this.capacity = 10;
     this.isImputMode = true;
     this.operand = {
@@ -13,8 +15,6 @@ export class Calculator {
     }
     this.currentAction = null;
     this.memory = null
-
-    console.log(this.memoryIndicator);
 
     const BUTTON_TYPES = {
       input: 0,
@@ -46,11 +46,10 @@ export class Calculator {
     const SINGLE_OPERATION = ['sqrt', '1/x'];
 
     let onClick = event => {
-      let button = event.target;
-      if (!button.closest('.calculator__button')) return false;
+      let $button = $(event.target);
 
-      let type = +button.dataset.type;
-      let value = button.dataset.value
+      let type = +$button.data('type');
+      let value = $button.data('value');
 
       switch (type) {
         case BUTTON_TYPES.service:
@@ -67,15 +66,20 @@ export class Calculator {
       }
     }
 
-    this.keyboard.addEventListener('click', onClick);
+    this.keyboard.on('click', '.calculator__button', onClick);
 
     this.destroy = () => {
-      this.keyboard.removeEventListener('click', onClick);
+      this.keyboard.off('click', onClick);
+      this.clear();
     }
   }
 
   input(value) {
     if (value === null) return false;
+
+    if (this.display.value === '0' && value === '.') {
+      this.display.value = '0.';
+    }
 
     if ((this.display.value === '0' || !this.isImputMode) && value !== '.' && value !== '±') {
       this.display.value = '';
