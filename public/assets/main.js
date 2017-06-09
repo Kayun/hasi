@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ecb55cabf52c8fd2a8cb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9430b366b873dde0d44c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1374,36 +1374,14 @@ function submitForm(event) {
     }
   });
 }
-
 fontSwitch.forEach(function (switcher) {
   switcher.addEventListener('click', function (event) {
     var target = event.target;
 
     if (!target.closest('.font-switch__option')) return;
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = switcher.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var option = _step.value;
-
-        option.classList.remove('_active');
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
+    Array.prototype.slice.apply(switcher.children).forEach(function (option) {
+      option.classList.remove('_active');
+    });
 
     var size = target.dataset.size;
 
@@ -1463,7 +1441,7 @@ document.addEventListener('keypress', function (event) {
 
 // removed by extract-text-webpack-plugin
     if(true) {
-      // 1497017735098
+      // 1497018184132
       const cssReload = __webpack_require__(5)({"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
