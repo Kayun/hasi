@@ -12,6 +12,7 @@ const rupture = require('rupture');
 
 const SRC_DIR = path.resolve(__dirname, 'src');
 const PUBLIC_PATH = '/hasi/public/';
+const IS_PROD = process.env.NODE_ENV === 'production'
 
 let templates = () => {
   let templatesPath = `${SRC_DIR}/templates/pages`;
@@ -50,7 +51,7 @@ module.exports = {
     rules: [
       {
         test: /\.styl$/,
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+        use: (IS_PROD ? [] : ['css-hot-loader']).concat(ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
@@ -100,7 +101,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015']
+            presets: [
+              ["env", {
+                "targets": {
+                  "browsers": ["last 2 versions", "Explorer >= 10"]
+                }
+              }]
+            ]
           }
         }
       }

@@ -4,7 +4,6 @@ block content
     .main
         .main__header
             img.main__logo(src=require("../../images/logo.png"))
-            .main__font: +font-switch()._gray
             .main__date
                 strong Date :
                 = " "
@@ -13,7 +12,6 @@ block content
         .main__outer
 
             .main__counter
-                .main__counter-font: +font-switch()
                 include ../blocks/counter
 
             .main__test
@@ -66,6 +64,6 @@ block content
                         a.test__feedback(href="#") Feedback / Problems
 
                         .test__control-buttons
-                            button.button.test__button.js-question-submit(type="button") Submit & Continue
-                            button.button.test__button(type="button") Submit & Pause/Leave Exam
+                            .button.test__button.js-question-submit Submit & Continue
+                            .button.test__button Submit & Pause/Leave Exam
 

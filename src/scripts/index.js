@@ -1,82 +1,80 @@
 import { Calculator } from './calculator';
+import $ from 'jquery';
 
-let answers = Array.prototype.slice.apply(document.querySelectorAll('.js-radio'));
-let fontSwitch = Array.prototype.slice.apply(document.querySelectorAll('.js-font-switch'));
-let form = document.querySelector('.js-question-form');
-let font = document.querySelector('.js-font');
-let submit = form.querySelector('.js-question-submit');
-let aside = document.querySelector('.js-aside');
-let calculator = aside.querySelector('.js-calculator');
+$(() => {
+  let $fontSwitch = $('.js-font-switch');
+  let $font = $('.js-font');
 
-let calcInstance;
+  let $answers = $('.js-radio');
+  let $form = $('.js-question-form');
+  let $submit = $('.js-question-submit');
 
-function submitForm(event) {
-  event.preventDefault();
+  let $aside = $('.js-aside');
+  let $calculator = $('.js-calculator');
 
-  answers.forEach(answer => {
-    if (answer.checked) {
-      event.target.submit();
+  let calcInstance;
+
+  function submitForm(event) {
+    event.preventDefault();
+
+    $answers.each((index, answer) => {
+      if (answer.checked) {
+        event.target.submit();
+        return false;
+      }
+    })
+  }
+
+  $fontSwitch.on('click', '.font-switch__option', event => {
+    let $target = $(event.target);
+    let size = $target.data('size')
+
+    $target.siblings().removeClass('_active')
+
+    $font.css('fontSize', `${size}px`);
+    $target.addClass('_active');
+  })
+
+  $aside.on('click', '.js-calc-mode', event => {
+    let $target = $(event.target);
+
+    $target.toggleClass('_active');
+    $aside.toggleClass('counter_mode_calc');
+
+    if ($target.hasClass('_active')) {
+      $target.text($target.data('hideText'));
+      calcInstance = new Calculator($calculator.get(0));
+    } else {
+      $target.text($target.data('showText'));
+      if (calcInstance) {
+        calcInstance.destroy();
+        calcInstance = null;
+      }
+    }
+  })
+
+  $form.on('submit', submitForm);
+
+  $submit.on('click', () => $form.trigger('submit'));
+
+  $(document).on('keypress', event => {
+    let code = event.which;
+    let char = String.fromCharCode(code).toUpperCase();
+
+    if (code === 13) {
+      $form.trigger('submit')
       return false;
     }
-  });
-}
-fontSwitch.forEach(switcher => {
-  switcher.addEventListener('click', event => {
-    let target = event.target;
 
-    if (!target.closest('.font-switch__option')) return;
-    Array.prototype.slice.apply(switcher.children).forEach(option => {
-      option.classList.remove('_active');
-    });
-
-    let size = target.dataset.size;
-
-    font.style.fontSize = `${size}px`;
-    target.classList.add('_active');
+    $answers.each((index, answer) => {
+      let $target = $(answer)
+      let data = $target.data('letter');
+      if (data === char) {
+        $target.prop('checked', true);
+        return false;
+      }
+    })
   })
 })
 
-aside.addEventListener('click', event => {
-  let target = event.target;
 
-  if (!target.closest('.js-calc-mode')) return;
-
-  target.classList.toggle('_active');
-  aside.classList.toggle('counter_mode_calc');
-
-  if (target.classList.contains('_active')) {
-    target.innerHTML = target.dataset.hideText;
-    calcInstance = new Calculator(calculator);
-  } else {
-    target.innerHTML = target.dataset.showText;
-    if (calcInstance) {
-      calcInstance.destroy();
-      calcInstance = null;
-    }
-  }
-})
-
-form.addEventListener('submit', submitForm);
-submit.addEventListener('click', () => {
-  let event = new Event('submit');
-  form.dispatchEvent(event);
-});
-
-document.addEventListener('keypress', event => {
-  let code = event.keyCode;
-  let char = String.fromCharCode(code).toUpperCase();
-
-  if (code === 13) {
-    let event = new Event('submit');
-    form.dispatchEvent(event);
-    return false;
-  }
-
-  answers.forEach(answer => {
-    let data = answer.dataset.letter;
-    if (data === char) {
-      answer.checked = true;
-      return false;
-    }
-  })
-})
