@@ -20,16 +20,15 @@ function submitForm(event) {
     }
   });
 }
-
 fontSwitch.forEach(switcher => {
   switcher.addEventListener('click', event => {
     let target = event.target;
 
-
     if (!target.closest('.font-switch__option')) return;
-    for (let option of switcher.children) {
+    Array.prototype.slice.apply(switcher.children).forEach(option => {
       option.classList.remove('_active');
-    }
+    });
+
     let size = target.dataset.size;
 
     font.style.fontSize = `${size}px`;
