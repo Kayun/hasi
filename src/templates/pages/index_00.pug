@@ -1,0 +1,23 @@
+extends ../layouts/index
+include ../blocks/counter
+include ../blocks/test
+
+block font
+    +font-switch([11, 13, 15])._white
+
+block content
+    - var question = 'A client’s caregiver is learning how to care for a client’s wound and drain. Which techique of cleansing, if taught to the caregiver, would decrease the chance of the client developing an infection ?'
+
+    .main__counter
+        +counter(
+            'Multiple-Choice Single-Answer',
+            'Select your answer from the options on the left.'
+        )
+    .main__test
+        +test(100, question, 'radio', [
+            ['A', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
+            ['B', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
+            ['C', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
+            ['D', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.']
+        ])
+

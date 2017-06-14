@@ -1,0 +1,14 @@
+mixin option(type, labels)
+    label(class=`${type} ${attributes.class}`)
+        - delete attributes.class;
+
+        input.js-option(
+            type= type,
+            class=`${type}__input`,
+            value= labels[0],
+            data-letter= labels[0]
+        )&attributes(attributes)
+
+        div(class=`${type}__label`)
+            div(class=`${type}__letter`)= labels[0]
+            span= labels[1]

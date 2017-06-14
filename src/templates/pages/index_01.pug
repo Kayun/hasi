@@ -1,0 +1,23 @@
+extends ../layouts/index
+include ../blocks/counter
+include ../blocks/test
+
+block font
+    +font-switch([11, 13, 15])._white
+
+block content
+    - var question = 'An elderly client experiences nocturia. Which actions should the nurse implement to assist this client? (Select all that apply.)'
+
+    .main__counter
+        +counter(
+            'Multiple Choice Multiple Answer',
+            'This item can have multiple correct answers. Refer to question instructions for answering information.'
+        )
+    .main__test
+        +test(101, question, 'checkbox', [
+            ['A', 'Ensure adequate night time lighting.'],
+            ['B', 'Have a call bell within reach of the client.'],
+            ['C', 'Provide warm water over the perineum.'],
+            ['D', 'Ensure the availability of a bedpan or toilet.'],
+            ['E', 'Ensure adequate fluid intake.']
+        ])
