@@ -14,7 +14,16 @@ html(lang="en")
 
             .page__container
                 .page__content.container
-                    block content
+                    .main
+                        .main__header
+                            img.main__logo(src=require("../../images/logo.png"))
+                            .main__date
+                                strong Date :
+                                = " "
+                                | Jan 17, 2017
+
+                        .main__outer
+                            block content
 
             .page__footer
                 include ../blocks/footer

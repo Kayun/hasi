@@ -1,69 +1,61 @@
 extends ../layouts/index
+include ../blocks/counter
+include ../blocks/test
+
+mixin list(pages)
+    ul.list
+        each page in pages
+            li.list__item
+                .list__page= page.href
+                a.list__link(href='./' + page.href)= page.label
+
 
 block content
-    .main
-        .main__header
-            img.main__logo(src=require("../../images/logo.png"))
-            .main__date
-                strong Date :
-                = " "
-                | Jan 17, 2017
+    style.
+        .index {
+            display: block;
+        }
 
-        .main__outer
+        .list {
+            padding-top: 20px;
+            padding-left: 0;
+            margin: 0;
+            display: block;
+            list-style: none;
+            width: 500px;
+        }
 
-            .main__counter
-                include ../blocks/counter
+        .list__item {
+            border: 1px solid #d0d0d0;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+        }
 
-            .main__test
-                form.test.js-question-form(href="#")
-                    .test__progress(style="width: 75%")
-                        .test__progress-point: span 75%
+        .list__item + .list__item {
+            margin-top: 10px;
+        }
 
-                    .test__content
-                        .test__count 100 of 180
+        .list__page {
+            float: right;
+        }
 
-                        .js-font
-                            .test__question
-                                | A client’s caregiver is learning how to care for a client’s wound and
-                                | drain. Which techique of cleansing, if taught to the caregiver, would
-                                | decrease the chance of the client developing an infection?
+        .list__link {
+            text-decoration: none;
+            color: #347bbc;
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s ease
+        }
 
-                            label.radio.test__answer
-                                input.radio__input.js-radio(type="radio" value="A" name="answer" data-letter="A" tabindex="1")
-                                .radio__label
-                                    .radio__letter A
-                                    span
-                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        | eium tempor.
+        .list__link:hover {
+            border-color: #347bbc;
+        }
 
-                            label.radio.test__answer
-                                input.radio__input.js-radio(type="radio" value="B" name="answer" data-letter="B" tabindex="2")
-                                .radio__label
-                                    .radio__letter B
-                                    span
-                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        | eium tempor.
-
-                            label.radio.test__answer
-                                input.radio__input.js-radio(type="radio" value="C" name="answer" data-letter="C" tabindex="3")
-                                .radio__label
-                                    .radio__letter C
-                                    span
-                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        | eium tempor.
-
-                            label.radio.test__answer
-                                input.radio__input.js-radio(type="radio" value="D" name="answer" data-letter="D" tabindex="4")
-                                .radio__label
-                                    .radio__letter D
-                                    span
-                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        | eium tempor.
-
-                    .test__control
-                        a.test__feedback(href="#") Feedback / Problems
-
-                        .test__control-buttons
-                            .button.test__button.js-question-submit Submit & Continue
-                            .button.test__button Submit & Pause/Leave Exam
+    .index
+        h1 List of pages
+        +list([
+            {label: 'Single answer', href: "index_00.html"},
+            {label: 'Multiple answer', href: "index_01.html"},
+            {label: 'Text switch with values 11px, 12px an 14px', href: "index_02.html"},
+        ])
 

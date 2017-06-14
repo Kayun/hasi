@@ -1,5 +1,5 @@
-mixin font-switch()
+mixin font-switch(sizes)
     .font-switch.js-font-switch(class= attributes.class)
-        .font-switch__option._size_11._active(data-size="11") A
-        .font-switch__option._size_13(data-size="13") A
-        .font-switch__option._size_15(data-size="15") A
+        .font-switch__option._size_11._active(data-size= sizes[0]) A
+        .font-switch__option._size_13(data-size= sizes[1]) A
+        .font-switch__option._size_15(data-size= sizes[2]) A

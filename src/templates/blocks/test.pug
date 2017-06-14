@@ -1,0 +1,20 @@
+mixin test(count, question, type, answers)
+    form.test.js-question-form(href="#")
+        .test__progress(style="width: 75%")
+            .test__progress-point: span 75%
+
+        .test__content
+            .test__count #{count} of 180
+
+            .js-font
+                .test__question= question
+
+                each answer, index in answers
+                    +option(type, answer).test__answer(name="answer", tabindex= index + 1)
+
+        .test__control
+            a.test__feedback(href="#") Feedback / Problems
+
+            .test__control-buttons
+                .button.test__button.js-question-submit Submit & Continue
+                .button.test__button Submit & Pause/Leave Exam

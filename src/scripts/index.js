@@ -5,7 +5,7 @@ $(() => {
   let $fontSwitch = $('.js-font-switch');
   let $font = $('.js-font');
 
-  let $answers = $('.js-radio');
+  let $answers = $('.js-option');
   let $form = $('.js-question-form');
   let $submit = $('.js-question-submit');
 
@@ -69,8 +69,9 @@ $(() => {
     $answers.each((index, answer) => {
       let $target = $(answer)
       let data = $target.data('letter');
+      console.log(data);
       if (data === char) {
-        $target.prop('checked', true);
+        $target.prop('checked', !$target.prop('checked'));
         return false;
       }
     })
