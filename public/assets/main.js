@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "827fded41c901b0aa44b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a944b821f65add2d8e91"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -10988,7 +10988,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   var $fontSwitch = (0, _jquery2.default)('.js-font-switch');
   var $font = (0, _jquery2.default)('.js-font');
 
-  var $answers = (0, _jquery2.default)('.js-radio');
+  var $answers = (0, _jquery2.default)('.js-option');
   var $form = (0, _jquery2.default)('.js-question-form');
   var $submit = (0, _jquery2.default)('.js-question-submit');
 
@@ -11054,8 +11054,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     $answers.each(function (index, answer) {
       var $target = (0, _jquery2.default)(answer);
       var data = $target.data('letter');
+      console.log(data);
       if (data === char) {
-        $target.prop('checked', true);
+        $target.prop('checked', !$target.prop('checked'));
         return false;
       }
     });
