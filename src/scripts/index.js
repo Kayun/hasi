@@ -1,5 +1,6 @@
 import { Calculator } from './calculator';
 import $ from 'jquery';
+import 'jquery-ui/ui/widgets/sortable';
 
 $(() => {
   let $fontSwitch = $('.js-font-switch');
@@ -11,6 +12,8 @@ $(() => {
 
   let $aside = $('.js-aside');
   let $calculator = $('.js-calculator');
+
+  let $sortContainer = $('.js-sort');
 
   let calcInstance;
 
@@ -29,6 +32,14 @@ $(() => {
       }
     })
   }
+
+  $sortContainer.length && $sortContainer.sortable({
+    stop: (event, ui) => {
+      let $counts = $('.js-sort-count', $sortContainer);
+      console.log($counts);
+      $counts.each((index, item) => $(item).text(index + 1));
+    }
+  });
 
   $fontSwitch.on('click', '.font-switch__option', event => {
     let $target = $(event.target);

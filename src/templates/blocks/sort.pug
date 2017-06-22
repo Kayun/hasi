@@ -1,0 +1,11 @@
+mixin sort(items)
+    ul.sort.js-sort
+
+        each item, index in items
+            li.sort__item
+                .sort__count
+                    span.js-sort-count= index + 1
+                    |.
+
+                .sort__label= item[0]
+                input(type="hidden", name="answer", value= item[1])

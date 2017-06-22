@@ -13,7 +13,7 @@ mixin test(count, question, type, answers)
                     each answer, index in answers
                         +option(type, answer).test__answer(name="answer", tabindex= index + 1)
 
-                if type === "input"
+                if type === "block"
                     block
 
         .test__control

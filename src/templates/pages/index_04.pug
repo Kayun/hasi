@@ -1,0 +1,25 @@
+extends ../layouts/index
+include ../blocks/counter
+include ../blocks/test
+include ../blocks/sort
+
+block font
+    +font-switch([11, 13, 15])._white
+
+block content
+    - var question = 'A recently deceased client needs post-mortem care. In which order should the nurse provide this care? (Arrange from first on top to last on bottom.)'
+
+    .main__counter
+        +counter(
+        'Ranking',
+        'Please use the mouse to click on items and move them to position answers in the correct order. Be concise and accurate.'
+        )
+    .main__test
+        +test(103, question, 'block')
+            +sort([
+                ['Remove indwelling devices.', 'a'],
+                ['Invite family members to view the deceased.', 'b'],
+                ['Collect specimens as requested.', 'c'],
+                ['Verify if autopsy and/or tissue and organ donation requests have been made.', 'd'],
+                ['Bathe and dress the body of the deceased.', 'e']
+            ])

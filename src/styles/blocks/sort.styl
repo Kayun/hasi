@@ -1,0 +1,43 @@
+.sort
+    margin: 0
+    padding: 0
+    list-style: none
+
+    &__item
+        relative()
+        cursor: move
+
+        &:not(:first-child)
+            margin-top: 10px
+
+        &.ui-sortable-helper:first-child + &
+            margin: 0
+
+        &.ui-sortable-helper
+            opacity: .75
+
+            & ^[0]__count
+                display: none
+
+    &__placeholder
+        height: 20px
+        display: inline-block
+        margin-left: 20px
+        border: 1px dashed #000
+
+    &__count
+        absolute: top 0 left 0
+        line-height: 20px
+
+    &__label
+        display: inline-block
+        background-color: #fff
+        margin-left: 20px
+        padding: 0 10px
+        line-height: 18px
+        border-radius: 1px
+        border: 1px solid #b4b4b4
+        transition: border-color .3s ease
+
+        &:hover
+            border-color: $blue-color
