@@ -9,8 +9,12 @@ mixin test(count, question, type, answers)
             .js-font
                 .test__question= question
 
-                each answer, index in answers
-                    +option(type, answer).test__answer(name="answer", tabindex= index + 1)
+                if type === "radio" || type === "checkbox"
+                    each answer, index in answers
+                        +option(type, answer).test__answer(name="answer", tabindex= index + 1)
+
+                if type === "input"
+                    block
 
         .test__control
             a.test__feedback(href="#") Feedback / Problems

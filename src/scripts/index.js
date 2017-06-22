@@ -17,6 +17,11 @@ $(() => {
   function submitForm(event) {
     event.preventDefault();
 
+    if (!$answers.length) {
+      event.target.submit();
+      return false;
+    }
+
     $answers.each((index, answer) => {
       if (answer.checked) {
         event.target.submit();
@@ -69,7 +74,7 @@ $(() => {
     $answers.each((index, answer) => {
       let $target = $(answer)
       let data = $target.data('letter');
-      console.log(data);
+
       if (data === char) {
         $target.prop('checked', !$target.prop('checked'));
         return false;
