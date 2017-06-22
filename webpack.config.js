@@ -11,6 +11,7 @@ const axis = require('axis');
 const rupture = require('rupture');
 
 const SRC_DIR = path.resolve(__dirname, 'src');
+const PUBLIC_PATH = '/hasi/public/';
 const IS_PROD = process.env.NODE_ENV === 'production'
 
 let templates = () => {
@@ -34,7 +35,7 @@ module.exports = {
   output: {
     filename: 'assets/[name].js',
     path: path.resolve(__dirname, 'public'),
-    publicPath: '/'
+    publicPath: PUBLIC_PATH
   },
   resolve: {
     extensions: [ '.js', '.styl', '.pug' ],
@@ -133,7 +134,7 @@ module.exports = {
         css: path.resolve(__dirname, 'src/styles/helpers/sprite.styl')
       },
       apiOptions: {
-        cssImageRef: "/assets/images/sprite.png"
+        cssImageRef: `${PUBLIC_PATH}/assets/images/sprite.png`
       }
     })
   ].concat(templates()),
