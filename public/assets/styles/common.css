@@ -642,6 +642,9 @@ html {
   border-color: #347bbc;
   opacity: 0.8;
 }
+.checkbox__input {
+  opacity: 1;
+}
 .checkbox__input:checked + .checkbox__label:before {
   background-color: #529af8;
   border-color: #529af8;
@@ -650,9 +653,11 @@ html {
   border-color: #529af8;
 }
 .checkbox__label:before {
+  display: none;
   border-radius: 4px;
 }
 .checkbox__label:after {
+  display: none;
   position: absolute;
   left: 5px;
   width: 5px;
@@ -718,6 +723,17 @@ html {
 }
 .font-switch._gray .font-switch__option._active {
   border-color: #797979;
+}
+.input {
+  color: #515251;
+  padding: 0;
+  line-height: 0.9375rem;
+  height: 1.0625rem;
+  border: 1px solid #515251;
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  text-align: left;
+  width: 154px;
+  outline: none;
 }
 .radio {
   display: inline-block;
@@ -978,15 +994,10 @@ html {
   font-weight: 700;
 }
 .counter__time-input {
-  color: #515251;
-  padding: 0;
   line-height: 1.4375rem;
   height: 1.5625rem;
-  border: 1px solid #515251;
-  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
   text-align: center;
   width: 100%;
-  outline: none;
 }
 .counter__control {
   padding-top: 0.5rem;
@@ -1197,6 +1208,53 @@ html {
     display: none;
   }
 }
+.sort {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sort__item {
+  position: relative;
+  cursor: move;
+}
+.sort__item:not(:first-child) {
+  margin-top: 10px;
+}
+.sort__item.ui-sortable-helper:first-child + .sort__item {
+  margin: 0;
+}
+.sort__item.ui-sortable-helper {
+  opacity: 0.75;
+}
+.sort__item.ui-sortable-helper .sort__count {
+  display: none;
+}
+.sort__placeholder {
+  height: 20px;
+  display: inline-block;
+  margin-left: 20px;
+  border: 1px dashed #000;
+}
+.sort__count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 20px;
+}
+.sort__label {
+  display: inline-block;
+  background-color: #fff;
+  margin-left: 20px;
+  padding: 0 10px;
+  line-height: 18px;
+  border-radius: 1px;
+  border: 1px solid #b4b4b4;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+.sort__label:hover {
+  border-color: #347bbc;
+}
 .test {
   position: relative;
   display: -webkit-box;
@@ -1263,6 +1321,9 @@ html {
 }
 .test__answer + .test__answer {
   margin-top: 0.25rem;
+}
+.test__answer.checkbox + .test__answer.checkbox {
+  margin-top: 0.5rem;
 }
 .test__control {
   padding-top: 0.625rem;
