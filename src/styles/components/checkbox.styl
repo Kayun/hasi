@@ -6,6 +6,7 @@ $checkbox-blue-color = #529af8
     @extend .radio
 
     &__input
+        opacity: 1
 
         &:checked + ^[0]__label:before
             background-color: $checkbox-blue-color
@@ -17,9 +18,11 @@ $checkbox-blue-color = #529af8
     &__label
 
         &:before
+            display: none
             border-radius: 4px
 
         &:after
+            display: none
             absolute: left 5px
             size: 5px 8px
             border-radius: 0
