@@ -643,6 +643,8 @@ html {
   opacity: 0.8;
 }
 .checkbox__input {
+  width: 14px;
+  height: 14px;
   opacity: 1;
 }
 .checkbox__input:checked + .checkbox__label:before {
@@ -961,8 +963,8 @@ html {
 @media only screen and (min-width: 31.25em) and (max-width: 48em) {
   .counter__col {
     -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
   }
 }
 .counter__time {
@@ -1215,7 +1217,6 @@ html {
 }
 .sort__item {
   position: relative;
-  cursor: move;
 }
 .sort__item:not(:first-child) {
   margin-top: 10px;
@@ -1243,7 +1244,7 @@ html {
 }
 .sort__label {
   display: inline-block;
-  background-color: #fff;
+  background-color: rgba(255,250,144,0.5);
   margin-left: 20px;
   padding: 0 10px;
   line-height: 18px;
@@ -1251,6 +1252,7 @@ html {
   border: 1px solid #b4b4b4;
   -webkit-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
+  cursor: move;
 }
 .sort__label:hover {
   border-color: #347bbc;
@@ -1413,6 +1415,9 @@ html {
   .test__button + .test__button {
     margin-top: 1.25rem;
   }
+}
+.test__input {
+  color: #000;
 }
 .main {
   display: -webkit-box;

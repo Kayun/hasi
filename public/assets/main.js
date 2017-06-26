@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "662d21c33d61652f694b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a94b319d5ed8a85aa203"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11768,6 +11768,8 @@ return $.widget;
 "use strict";
 
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _calculator = __webpack_require__(6);
 
 var _jquery = __webpack_require__(0);
@@ -11779,6 +11781,59 @@ __webpack_require__(10);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
+
+  (function ($) {
+
+    $.support.touch = (typeof Touch === 'undefined' ? 'undefined' : _typeof(Touch)) === 'object';
+
+    if (!$.support.touch) {
+      return;
+    }
+
+    var proto = $.ui.mouse.prototype,
+        _mouseInit2 = proto._mouseInit;
+
+    $.extend(proto, {
+      _mouseInit: function _mouseInit() {
+        this.element.bind("touchstart." + this.widgetName, $.proxy(this, "_touchStart"));
+        _mouseInit2.apply(this, arguments);
+      },
+
+      _touchStart: function _touchStart(event) {
+        if (event.originalEvent.targetTouches.length != 1) {
+          return false;
+        }
+
+        this.element.bind("touchmove." + this.widgetName, $.proxy(this, "_touchMove")).bind("touchend." + this.widgetName, $.proxy(this, "_touchEnd"));
+
+        this._modifyEvent(event);
+
+        $(document).trigger($.Event("mouseup")); //reset mouseHandled flag in ui.mouse
+        this._mouseDown(event);
+
+        return false;
+      },
+
+      _touchMove: function _touchMove(event) {
+        this._modifyEvent(event);
+        this._mouseMove(event);
+      },
+
+      _touchEnd: function _touchEnd(event) {
+        this.element.unbind("touchmove." + this.widgetName).unbind("touchend." + this.widgetName);
+        this._mouseUp(event);
+      },
+
+      _modifyEvent: function _modifyEvent(event) {
+        event.which = 1;
+        var target = event.originalEvent.targetTouches[0];
+        event.pageX = target.clientX;
+        event.pageY = target.clientY;
+      }
+
+    });
+  })(_jquery2.default);
+
   var $fontSwitch = (0, _jquery2.default)('.js-font-switch');
   var $font = (0, _jquery2.default)('.js-font');
 
