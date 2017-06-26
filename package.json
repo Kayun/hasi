@@ -9,6 +9,7 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
+    "jquery-ui-touch-punch": "~0.2.3",
     "normalize.css": "~7.0.0"
   },
   "devDependencies": {
