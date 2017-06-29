@@ -1,0 +1,7 @@
+mixin overview(items)
+    .overview&attributes(attributes)
+
+        each item, index in items
+            .overview__item
+                .overview__count= index + 1
+                .overview__label= item

@@ -1,0 +1,78 @@
+.start
+
+    +below(768px)
+        flex: auto
+
+    &__content
+        letter-spacing: 0
+        padding-top: rem(36px)
+
+        +below(400px)
+            padding: rem(20px) 0
+
+    &__title
+        margin: 0
+        fs: rem(20px)
+        font-weight: 700
+
+        +below(400px)
+            fs: rem(18px)
+
+    &__subtitle
+        margin-top: rem(2px)
+        color: $blue-color
+        fs: rem(14px)
+
+    &__inner
+        padding-top: rem(27px)
+        display: flex
+
+        +below(768px)
+            flex-direction: column
+
+    &__section
+        flex: 1 0 50%
+
+        +below(768px)
+
+            &:not(:first-child)
+                margin-top: 20px
+
+    &__article
+        margin-top: 0
+        font-weight: 700
+
+    &__overview
+        margin-top: rem(13px)
+
+    &__info
+        margin-top: rem(14px)
+        padding: rem(36px) rem(34px)
+        background-color: #f9f9f9
+        border-top: 1px solid #dfdfdf
+        border-bottom: 1px solid #dfdfdf
+
+        +below(500px)
+            padding: rem(20px)
+
+    &__info-text
+        margin: 0
+        color: $gray-font-color
+        line-height: rem(16px)
+
+        &:not(:first-child)
+            margin-top: rem(18px)
+
+    &__term
+        margin-top: rem(22px)
+        color: $gray-font-color
+
+    &__button
+        width: rem(130px)
+        text-transform: uppercase
+        float: right
+
+        +below(400px)
+            margin-top: 10px
+            width: 100%
+
