@@ -1,0 +1,51 @@
+extends ../layouts/index
+include ../blocks/counter
+include ../blocks/test
+include ../blocks/overview
+
+block content
+    .start.test
+
+        .start__content.test__content
+
+            h1.start__title HESI Exam Study - V 2017
+            .start__subtitle Examination Software
+
+            .start__inner
+                .start__section
+                    .start__article.start__subtitle Test Overview
+                    +overview([
+                        'Click START.',
+                        'Read Practice Instructions.',
+                        'Start Exam.',
+                        'View Score.',
+                        'View Rationales.',
+                        'EXIT when finished (and take another exam).'
+                    ]).start__overview
+
+                .start__section
+                    .start__article.start__subtitle Disclosure Information
+                    .start__info
+
+                        p.start__info-text
+                            | This Agreement sets forth the terms and conditions governing your
+                            | access to the HESI Practice Exam powered by YourBestGrade.com, and
+                            | your use of the service provided.
+
+                        p.start__info-text
+                            | You have read and understand our terms and conditions. Clicking on
+                            | the start button signifies your willingness to be bound by our
+                            br
+                            a.link.link_color_gray(href="javascript:void(0)") Terms&nbsp;of&nbsp;Use
+                            = " "
+                            | and
+                            = " "
+                            a.link.link_color_gray(href="javascript:void(0)") Privacy&nbsp;Policy.
+
+                    label.checkbox.checkbox_without_letter.start__term
+                        input.checkbox__input(type="checkbox")
+                        .checkbox__label I have read and agree with the terms and conditions
+
+        .test__control
+
+            .button.test__button.start__button Start
