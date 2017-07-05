@@ -1,0 +1,29 @@
+extends ../layouts/index
+
+block content
+    .main__inner.start.welcome
+
+        .welcome__info
+
+            .welcome__title RN Exit Exam Practice
+
+            .welcome__text.start__info-text
+                | Welcome to the HESI Exit Exam practice. This exam is designed to assess your
+                | readiness for the HESI RN Exit Exam.
+
+            .welcome__text.start__info-text
+                | The options A, B, C, or D, etc, are available for most questions. Take your time
+                | to read the instructions of every question. You should confirm your answer before
+                | you proceed to the next question.
+
+            .welcome__text.start__info-text
+                | You are allowed to use your Windows, or real life, calculator during this exam.
+
+            .welcome__text.start__info-text
+                | Rationales for the items you missed will appear on the screen after the last question,
+                = " "
+                strong: i prior
+                = " "
+                |to exiting the exam.
+
+        .button.welcome__button Continue

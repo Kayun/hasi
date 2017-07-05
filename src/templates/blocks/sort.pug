@@ -7,5 +7,5 @@ mixin sort(items)
                     span.js-sort-count= index + 1
                     |.
 
-                .sort__label= item[0]
+                .sort__label: span= item[0]
                 input(type="hidden", name="answer", value= item[1])

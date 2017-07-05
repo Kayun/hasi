@@ -1,0 +1,39 @@
+mixin table(rows)
+    table.exam-table
+        thead
+            tr.exam-table__head
+                th Exam Name
+                th Completion Status
+                th Exam Options
+                th
+
+        tbody
+
+            each row in rows
+                tr.exam-table__row
+                    td= row.name
+
+                    td= row.status
+
+                    td
+                        label.checkbox.checkbox_without_letter.exam-table__checkbox
+                            input.checkbox__input(type="checkbox")
+                            .checkbox__label Study Mode
+
+                        +answer("Inmediate Answers <br>& Rationales").exam-table__info
+
+                    td.exam-table__select-cell
+                        label.checkbox.checkbox_without_letter.exam-table__checkbox
+                            input.checkbox__input(type="checkbox")
+                            .checkbox__label
+                                | Timed Test Mode (Average
+
+                                select.exam-table__select
+                                    option 1
+                                    option 2
+                                    option 3
+                                    option 4
+
+                                | Minute(s) Per Question)
+
+
