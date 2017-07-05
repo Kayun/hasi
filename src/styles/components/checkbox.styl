@@ -4,10 +4,13 @@ $checkbox-blue-color = #529af8
 
 .checkbox
     @extend .radio
+    relative()
 
     &__input
         size: 14px
         opacity: 1
+        vertically-align()
+        absolute()
 
         &:checked + ^[0]__label:before
             background-color: $checkbox-blue-color
@@ -20,18 +23,9 @@ $checkbox-blue-color = #529af8
 
         &:before
             display: none
-            border-radius: 4px
 
         &:after
             display: none
-            absolute: left 5px
-            size: 5px 8px
-            border-radius: 0
-            background-color: transparent
-            border-bottom: 1.5px solid #fff
-            border-right: 1.5px solid #fff
-            margin-left: -1px
-            transform: rotate(45deg) translate(-3px, -4px)
 
         &:hover
 

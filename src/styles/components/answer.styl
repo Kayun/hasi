@@ -1,0 +1,43 @@
+.answer
+    display: inline-block
+    relative()
+    size: rem(10px)
+    background-color: $blue-color
+    border-radius: 50%
+    color: #ffffff
+    fs: 8.5px
+    line-height: rem(10px)
+    text-align: center
+    cursor: default
+
+    &:hover
+
+        & ^[0]__popup
+            visibility: visible
+            opacity: 1
+            transition-delay: 0s
+
+    &__popup
+        absolute: bottom calc(100% + 7px) left 0
+        z-index: 1
+        padding: 12px 10px
+        width: 175px
+        background-color: #ffffff
+        border-radius: 5px
+        line-height: 14px
+        fs: 11px
+        box-shadow: 0 0 3px rgba(0, 0, 0, .2)
+        transform: translateX(-40%)
+        color: $gray-font-color
+        opacity: 0
+        visibility: hidden
+        transition: opacity .3s ease, visibility 0s ease
+
+        &:before
+            absolute: bottom -4px left 40.7%
+            size: rem(6px)
+            content: ''
+            background-color: #ffffff
+            border-bottom: 1px solid rgba(0, 0, 0, .1)
+            border-left: 1px solid rgba(0, 0, 0, .1)
+            transform: rotate(-45deg)
