@@ -1,0 +1,25 @@
+mixin table-end(rows)
+    table.exam-table&attributes(attributes)
+        thead
+            tr.exam-table__head
+                th Exam Name
+                th Completion Status
+                th HESI Score
+                th Percentage Score
+                th.exam-table__button-cell Reports
+
+        tbody
+
+            each row in rows
+                tr.exam-table__row
+                    td= row.name
+
+                    td= row.status
+
+                    td= row.score
+
+                    td= row.scorePer
+
+                    td.exam-table__button-cell
+                        .button.exam-table__button View Answers
+                        .button.exam-table__button View Rationales

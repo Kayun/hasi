@@ -1,6 +1,9 @@
 extends ../layouts/index
 include ../blocks/overview
 
+block font
+    +font-switch([11, 12, 14])._white
+
 block content
     .start.test
 
@@ -9,7 +12,7 @@ block content
             h1.start__title HESI Exam Study - V 2017
             .start__subtitle Examination Software
 
-            .start__inner
+            .start__inner.js-font
                 .start__section
                     .start__article.start__subtitle Test Overview
                     +overview([

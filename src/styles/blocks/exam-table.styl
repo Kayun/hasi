@@ -24,12 +24,17 @@
                 padding-top: 10px
                 padding-bottom: 9px
 
+            &^[0]__button-cell
+                padding-top: 11px
+                padding-bottom: 10px
+
     &__checkbox
 
         .checkbox__label
             min-height: auto
 
     &__info
+        top: -1px
         margin-left: rem(3px)
 
     &__select
@@ -38,6 +43,15 @@
         margin: 0 5px
         width: 50px
         height: 20px
-        line-height: 20px
+        line-height: rem(20px)
+
+    &__button
+        width: rem(130px)
+
+    &__button-cell
+        width: 290px
+
+        .button + .button
+            margin-left: 10px
 
 

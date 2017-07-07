@@ -34,6 +34,14 @@ $(() => {
     })
   }
 
+  $answers.not(':last-child').each((index, answer) => {
+    let $row = $(answer).parent();
+
+    if ($row.height() === 14) {
+      $row.css('margin-bottom', '8px')
+    }
+  })
+
   $sortContainer.length && $sortContainer.sortable({
     stop: (event, ui) => {
       let $counts = $('.js-sort-count', $sortContainer);

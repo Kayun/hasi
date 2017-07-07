@@ -1,0 +1,19 @@
+extends ../layouts/index
+include ../blocks/table-end
+
+block font
+    +font-switch([11, 12, 14])._white
+
+block content
+    .main__inner
+
+        +table-end([
+            {
+                name: "Free HESI RN Exit Practice",
+                status: "Not Started",
+                score: 275,
+                scorePer: '25%'
+            }
+        ]).js-font
+
+        .button.button_bold.main__button More Practice

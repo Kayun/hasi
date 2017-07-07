@@ -1,11 +1,14 @@
 extends ../layouts/index
 include ../blocks/table
 
+block font
+    +font-switch([11, 12, 14])._white
+
 block content
     .main__inner
 
         +table([
             {name: "Free HESI RN Exit Practice", status: "Not Started"}
-        ])
+        ]).js-font
 
         .button.main__button Start Exam
