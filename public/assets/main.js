@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8cba41cc79eecde207bf"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e8be88783d4041e505d0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11810,6 +11810,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       }
     });
   }
+
+  $answers.not(':last-child').each(function (index, answer) {
+    var $row = (0, _jquery2.default)(answer).parent();
+
+    if ($row.height() === 14) {
+      $row.css('margin-bottom', '8px');
+    }
+  });
 
   $sortContainer.length && $sortContainer.sortable({
     stop: function stop(event, ui) {

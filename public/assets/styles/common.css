@@ -618,6 +618,9 @@ html {
 .button:hover {
   background-color: #2f6fa9;
 }
+.button_bold {
+  font-weight: 700;
+}
 .radio,
 .checkbox {
   display: inline-block;
@@ -657,7 +660,6 @@ html {
   position: relative;
   padding-left: 2.6875rem;
   line-height: 1.3;
-  min-height: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -843,7 +845,6 @@ html {
   position: relative;
   padding-left: 2.6875rem;
   line-height: 1.3;
-  min-height: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1158,10 +1159,15 @@ html {
   padding-top: 10px;
   padding-bottom: 9px;
 }
+.exam-table__row td.exam-table__button-cell {
+  padding-top: 11px;
+  padding-bottom: 10px;
+}
 .exam-table__checkbox .checkbox__label {
   min-height: auto;
 }
 .exam-table__info {
+  top: -1px;
   margin-left: 0.1875rem;
 }
 .exam-table__select {
@@ -1170,7 +1176,16 @@ html {
   margin: 0 5px;
   width: 50px;
   height: 20px;
-  line-height: 20px;
+  line-height: 1.25rem;
+}
+.exam-table__button {
+  width: 8.125rem;
+}
+.exam-table__button-cell {
+  width: 290px;
+}
+.exam-table__button-cell .button + .button {
+  margin-left: 10px;
 }
 .footer {
   padding-top: 0.4375rem;
@@ -1368,7 +1383,7 @@ html {
   position: relative;
 }
 .sort__item:not(:first-child) {
-  margin-top: 0.625rem;
+  margin-top: 0.25rem;
 }
 .sort__item.ui-sortable-helper:first-child + .sort__item {
   margin: 0;
@@ -1766,7 +1781,6 @@ html {
 }
 .start__term {
   margin-top: 1.375rem;
-  color: #7a7a7a;
 }
 .start__button {
   width: 8.125rem;
