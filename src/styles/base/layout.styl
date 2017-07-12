@@ -4,6 +4,9 @@
     min-height: 100%
     font-size: unit($font-size, 'px')
 
+    +below(500px)
+        font-size: 12px
+
     &__header
         absolute: top 0 left 0
         size: 100% rem(40px)
@@ -14,7 +17,7 @@
         padding-bottom: rem(30px)
 
         +below(650px)
-            padding-bottom: rem(40px)
+            //padding-bottom: rem(40px)
 
     &__content
         background-color: $page-color
@@ -28,7 +31,7 @@
         size: 100% rem(30px)
 
         +below(650px)
-            height: rem(40px)
+            //height: rem(40px)
 
 .container
     margin: 0 auto
@@ -49,6 +52,13 @@
     +below('s')
         padding-left: rem(20px)
         padding-right: rem(20px)
+
+.desktop
+    display: block
+
+    +below(768px)
+        display: none
+
 
 @media screen and (max-height: 760px)
 
