@@ -464,7 +464,7 @@ body {
   height: 100%;
 }
 html {
-  color: #2a2a2a;
+  color: #000;
   font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
   background-color: #d0d0d0;
   letter-spacing: -0.15px;
@@ -477,6 +477,11 @@ html {
   min-height: 100%;
   font-size: 11px;
 }
+@media only screen and (max-width: 31.25em) {
+  .page {
+    font-size: 12px;
+  }
+}
 .page__header {
   position: absolute;
   top: 0;
@@ -488,11 +493,6 @@ html {
   height: 100%;
   padding-top: 2.5rem;
   padding-bottom: 1.875rem;
-}
-@media only screen and (max-width: 40.625em) {
-  .page__container {
-    padding-bottom: 2.5rem;
-  }
 }
 .page__content {
   background-color: #fff;
@@ -509,11 +509,6 @@ html {
   left: 0;
   width: 100%;
   height: 1.875rem;
-}
-@media only screen and (max-width: 40.625em) {
-  .page__footer {
-    height: 2.5rem;
-  }
 }
 .container {
   margin: 0 auto;
@@ -539,6 +534,14 @@ html {
   .container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+}
+.desktop {
+  display: block;
+}
+@media only screen and (max-width: 48em) {
+  .desktop {
+    display: none;
   }
 }
 @media screen and (max-height: 760px) {
@@ -1057,6 +1060,7 @@ html {
   padding-top: 3.4375rem;
   padding-bottom: 2.875rem;
   text-align: center;
+  color: #2a2a2a;
   width: 8.75rem;
 }
 @media only screen and (min-width: 31.25em) and (max-width: 48em) {
@@ -1077,7 +1081,6 @@ html {
 }
 .counter__time-label {
   margin-bottom: 0.75rem;
-  color: #515251;
   font-weight: 700;
 }
 .counter__time-input {
@@ -1163,6 +1166,10 @@ html {
   padding-top: 11px;
   padding-bottom: 10px;
 }
+.exam-table__name,
+.exam-table__status {
+  width: 190px;
+}
 .exam-table__checkbox .checkbox__label {
   min-height: auto;
 }
@@ -1196,12 +1203,6 @@ html {
   display: table;
   content: '';
 }
-@media only screen and (max-width: 40.625em) {
-  .footer {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-}
 .footer__title {
   float: left;
 }
@@ -1212,6 +1213,8 @@ html {
 .footer__copyright {
   color: #7a7a7a;
   line-height: 1rem;
+  font-size: 8px;
+  font-size: 0.6875rem;
 }
 @media only screen and (max-width: 40.625em) {
   .footer__title,
@@ -1436,6 +1439,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  color: #2a2a2a;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
@@ -1664,6 +1668,13 @@ html {
   padding: 0 2.1875rem;
   margin-top: 0.75rem;
 }
+.main__button_w_130 {
+  padding: 0;
+  width: 130px;
+}
+.main__button_mr_10 {
+  margin-right: 10px;
+}
 .main__counter {
   position: relative;
   padding-left: 1.25rem;
@@ -1757,7 +1768,7 @@ html {
   font-weight: 700;
 }
 .start__overview {
-  margin-top: 0.8125rem;
+  margin-top: 0.3125rem;
 }
 .start__info {
   margin-top: 0.875rem;
@@ -1766,9 +1777,9 @@ html {
   border-top: 1px solid #dfdfdf;
   border-bottom: 1px solid #dfdfdf;
 }
-@media only screen and (max-width: 31.25em) {
+@media only screen and (max-width: 48em) {
   .start__info {
-    padding: 1.25rem;
+    padding: 1.125rem;
   }
 }
 .start__info-text {
