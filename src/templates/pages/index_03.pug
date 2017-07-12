@@ -2,6 +2,12 @@ extends ../layouts/index
 include ../blocks/counter
 include ../blocks/test
 
+block date
+    .main__date
+        strong Date :
+        = " "
+        | Jan 17, 2017
+
 block font
     +font-switch([11, 12, 14])._white
 

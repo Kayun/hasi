@@ -1,5 +1,11 @@
 extends ../layouts/index
 
+block date
+    .main__date
+        strong Date :
+        = " "
+        | Jan 17, 2017
+
 block font
     +font-switch([11, 12, 14])._white
 
@@ -8,7 +14,7 @@ block content
 
         .welcome__info
 
-            .welcome__title RN Exit Exam Practice
+            .welcome__title.js-font RN Exit Exam Practice
 
             .welcome__text.start__info-text.js-font
                 | Welcome to the HESI Exit Exam practice. This exam is designed to assess your
