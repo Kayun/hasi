@@ -3,6 +3,11 @@
     border-collapse: collapse
     width: 100%
 
+    &_desktop
+
+        +below(641px)
+            display: none
+
     &__head
         font-weight: 700
         background-color: $blue-color
@@ -32,10 +37,23 @@
     &__status
         width: 190px
 
+        +below(960px)
+            width: auto
+
+    &__option
+        white-space: nowrap
+
     &__checkbox
 
         .checkbox__label
             min-height: auto
+
+        +below(900px)
+
+            .checkbox__label
+                text-align: left
+                flex-direction column
+                align-items flex-start
 
     &__info
         top: -1px
@@ -51,6 +69,14 @@
 
     &__button
         width: rem(130px)
+        padding: 0
+
+        &_left
+            margin-top: 12px
+            float: left
+
+            & + .button
+                margin-left: 10px
 
     &__button-cell
         width: 290px
@@ -58,4 +84,127 @@
         .button + .button
             margin-left: 10px
 
+.exam-table-slider
+    relative()
+    padding: 0 40px
+    margin-bottom: 30px
+
+    &__row
+        //width: 100%
+        transition: opacity .3s ease
+
+        &.swiper-slide-next
+        &.swiper-slide-prev
+            opacity: 0
+
+    &__item
+        relative()
+        display: flex
+
+    &__label
+    &__value
+        relative()
+        flex: 1 1 50%
+
+        &:after
+        &:before
+            absolute: bottom 0 left 0
+            content: ''
+            size: 100% 1px
+
+        &:before
+            display: none
+
+        &_overline:before
+            display: block
+            bottom: auto
+            top: 0
+
+    &__label
+        @extend .exam-table__head
+        @extend .exam-table__head th
+        padding-left: 10%
+        text-align: right
+        background-color: transparent
+        background-image: linear-gradient(to left, $blue-color 80%, rgba(255, 255, 255, 0))
+
+        &:after
+        &:before
+            background-image: linear-gradient(to left, #dfdfdf 80%, rgba(255, 255, 255, 0))
+
+    &__value
+        @extend .exam-table__head th
+
+        &:after
+        &:before
+            background-image: linear-gradient(to right, #dfdfdf 80%, rgba(255, 255, 255, 0))
+
+    &__prev
+    &__next
+        absolute: top 50%
+        z-index: 1
+        size: 35px
+        border: 2px solid $blue-color
+        border-radius: 50%
+        transform: translateY(-50%)
+        cursor: pointer
+        transition: border-color .3s ease
+
+        &:before
+            absolute: top 10px
+            content: ''
+            border-bottom: 2px solid $blue-color
+            border-left: 2px solid $blue-color
+            size: 12px
+
+        &:hover
+        &:hover:before
+            border-color: darken($blue-color, 10%)
+
+    &__prev
+        left: 0
+
+        &:before
+            transform: rotate(45deg)
+            left: 12px
+
+    &__next
+        right: 0
+
+        &:before
+            transform: rotate(-135deg)
+            right: 12px
+
+    &__button
+        @extend .exam-table__button
+        @extend .exam-table__button_left
+
+        +below(480px)
+            line-height: rem(40px)
+            width: 100%
+            float: none
+
+        & + ^[0]__button
+
+            +below(480px)
+                margin: 0
+                margin-top: 20px
+
+    &__select
+        margin-top: 20px
+
+    &__options
+
+        .checkbox__input
+
+            +below(500px)
+                top: 0
+                transform: none
+
+        .checkbox__label
+            align-items center
+
+            +below(500px)
+                flex-direction column
+                align-items flex-start
 

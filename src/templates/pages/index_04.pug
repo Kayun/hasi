@@ -4,13 +4,13 @@ include ../blocks/test
 include ../blocks/sort
 
 block date
-    .main__date
+    .main__date.js-font
         strong Date :
         = " "
         | Jan 17, 2017
 
 block font
-    +font-switch([11, 12, 14])._white
+    +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
     - var question = 'A recently deceased client needs post-mortem care. In which order should the nurse provide this care? (Arrange from first on top to last on bottom.)'

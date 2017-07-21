@@ -3,13 +3,13 @@ include ../blocks/counter
 include ../blocks/test
 
 block date
-    .main__date.desktop
+    .main__date.desktop.js-font
         strong Date :
         = " "
         | Jan 17, 2017
 
 block font
-    +font-switch([11, 12, 14])._white
+    +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
     - var question = 'An elderly client experiences nocturia. Which actions should the nurse implement to assist this client? (Select all that apply.)'

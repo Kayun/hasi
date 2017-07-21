@@ -4,7 +4,7 @@ mixin test(count, question, type, answers)
             .test__progress-point: span 75%
 
         .test__content
-            .test__count #{count} of 180
+            .test__count.js-font #{count} of 180
 
             .js-font
                 .test__question= question
@@ -17,8 +17,8 @@ mixin test(count, question, type, answers)
                     block
 
         .test__control
-            a.test__feedback(href="#") Feedback / Problems
+            a.test__feedback.js-font(href="#") Feedback / Problems
 
             .test__control-buttons
-                .button.test__button.js-question-submit Submit & Continue
-                .button.test__button Submit & Pause/Leave Exam
+                .button.test__button.js-question-submit.js-font Submit & Continue
+                .button.test__button.js-font Submit & Pause/Leave Exam

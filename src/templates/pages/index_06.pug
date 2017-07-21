@@ -1,13 +1,13 @@
 extends ../layouts/index
 
 block date
-    .main__date
+    .main__date.js-font
         strong Date :
         = " "
         | Jan 17, 2017
 
 block font
-    +font-switch([11, 12, 14])._white
+    +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
     .main__inner.start.welcome
@@ -35,4 +35,4 @@ block content
                 = " "
                 |to exiting the exam.
 
-        .button.main__button.welcome__button Continue
+        .button.main__button.welcome__button.js-font Continue
