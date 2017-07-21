@@ -5,6 +5,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ReloadPlugin = require('reload-html-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
 const axis = require('axis');
@@ -89,10 +90,7 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|png)$/,
         use: {
-          loader: 'file-loader',
-          options: {
-            name: 'assets/images/[name].[ext]'
-          }
+          loader: 'file-loader'
         }
       },
       {
@@ -136,8 +134,11 @@ module.exports = {
       apiOptions: {
         cssImageRef: `${PUBLIC_PATH}/assets/images/sprite.png`
       }
+
     })
-  ].concat(templates()),
+  ].concat(templates()).concat([
+    new ReloadPlugin()
+  ]),
 
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),

@@ -3,13 +3,13 @@ include ../blocks/counter
 include ../blocks/test
 
 block date
-    .main__date.desktop
+    .main__date.desktop.js-font
         strong Date :
         = " "
         | Jan 17, 2017
 
 block font
-    +font-switch([11, 12, 14])._white
+    +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
     - var question = 'A client’s caregiver is learning how to care for a client’s wound and drain. Which techique of cleansing, if taught to the caregiver, would decrease the chance of the client developing an infection ?'

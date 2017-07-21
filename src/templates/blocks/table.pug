@@ -1,5 +1,5 @@
 mixin table(rows)
-    table.exam-table&attributes(attributes)
+    table.exam-table.exam-table_desktop&attributes(attributes)
         thead
             tr.exam-table__head
                 th.exam-table__name Exam Name
@@ -15,25 +15,75 @@ mixin table(rows)
 
                     td= row.status
 
-                    td
+                    td.exam-table__option
                         label.checkbox.checkbox_without_letter.exam-table__checkbox
                             input.checkbox__input(type="checkbox")
                             .checkbox__label Study Mode
-
+                        | &nbsp;
                         +answer("Inmediate Answers <br>& Rationales").exam-table__info
 
                     td.exam-table__select-cell
                         label.checkbox.checkbox_without_letter.exam-table__checkbox
                             input.checkbox__input(type="checkbox")
                             .checkbox__label
-                                | Timed Test Mode (Average
+                                span Timed Test Mode
 
-                                select.exam-table__select
-                                    option 1
-                                    option 2
-                                    option 3
-                                    option 4
+                                span
+                                    | (Average
 
-                                | Minute(s) Per Question)
+                                    select.exam-table__select
+                                        option 1
+                                        option 2
+                                        option 3
+                                        option 4
+
+                                    | Minute(s) Per Question)
+
+    .mobile
+
+        .exam-table-slider.swiper-container.js-font.js-slider
+
+            .swiper-wrapper
+
+                each row in rows
+                    .exam-table-slider__row.swiper-slide
+                        .exam-table-slider__item
+                            .exam-table-slider__label.exam-table-slider__label__overline Exam Name
+                            .exam-table-slider__value= row.name
+
+                        .exam-table-slider__item
+                            .exam-table-slider__label Completion Status
+                            .exam-table-slider__value= row.status
+
+                        .exam-table-slider__item
+                            .exam-table-slider__label Exam Options
+                            .exam-table-slider__value
+                                label.checkbox.checkbox_without_letter.exam-table__checkbox
+                                    input.checkbox__input(type="checkbox")
+                                    .checkbox__label Study Mode
+
+                                br
+                                br
+
+                                | (Inmediate Answers & Rationales)
+
+                        .exam-table-slider__select
+                            label.checkbox.checkbox_without_letter.exam-table-slider__options
+                                input.checkbox__input(type="checkbox")
+                                .checkbox__label
+                                    span Timed Test Mode
+                                    span
+                                        | (Average
+
+                                        select.exam-table__select
+                                            option 1
+                                            option 2
+                                            option 3
+                                            option 4
+
+                                        | Minute(s) Per Question)
+
+            .exam-table-slider__prev
+            .exam-table-slider__next
 
 

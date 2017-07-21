@@ -2,6 +2,7 @@ import { Calculator } from './calculator';
 import $ from 'jquery';
 import 'jquery-ui/ui/widgets/sortable';
 import 'imports-loader?jQuery=jquery!jquery-ui-touch-punch';
+import Swiper from 'swiper';
 
 $(() => {
   let $fontSwitch = $('.js-font-switch');
@@ -15,6 +16,8 @@ $(() => {
   let $calculator = $('.js-calculator');
 
   let $sortContainer = $('.js-sort');
+
+  let $slider = $('.js-slider');
 
   let calcInstance;
 
@@ -34,6 +37,13 @@ $(() => {
     })
   }
 
+  let examSwiper = new Swiper ('.js-slider', {
+    slidesPerView: 1,
+    prevButton: '.exam-table-slider__prev',
+    nextButton: '.exam-table-slider__next',
+    loop: true
+  })
+
   $answers.not(':last-child').each((index, answer) => {
     let $row = $(answer).parent();
 
@@ -51,7 +61,7 @@ $(() => {
 
   $fontSwitch.on('click', '.font-switch__option', event => {
     let $target = $(event.target);
-    let size = $target.data('size')
+    let size = $(window).width() <= 768 ? $target.data('mobileSize') : $target.data('size')
 
     $target.siblings().removeClass('_active')
 

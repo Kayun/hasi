@@ -10,13 +10,13 @@ mixin counter(title, descr)
 
         .counter__col
             .counter__time.counter__section
-                .counter__time-label Remaining Time :
-                input.input.counter__time-input(type="text", value="01:49:55", readonly)
+                .counter__time-label.js-font Remaining Time :
+                input.input.counter__time-input.js-font(type="text", value="01:49:55", readonly)
 
             .counter__divider.counter__divider._descktop
 
             .counter__control
-                button.counter__control-button.js-calc-mode(
+                button.counter__control-button.js-calc-mode.js-font(
                     type="button",
                     data-show-text="Show Calculator",
                     data-hide-text="Hide Calculator"
