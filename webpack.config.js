@@ -89,7 +89,7 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|png)$/,
         use: {
-          loader: 'file-loader'
+          loader: 'file-loader?name=assets/images/[name].[hash:20].[ext]'
         }
       },
       {
