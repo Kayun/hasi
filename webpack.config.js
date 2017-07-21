@@ -121,7 +121,6 @@ module.exports = {
       writeToFileEmit: true
     }),
     new ExtractTextPlugin('assets/styles/common.css'),
-    new webpack.HotModuleReplacementPlugin(),
     new SpritesmithPlugin({
       src: {
         cwd: path.resolve(__dirname, 'src/images/sprite'),
@@ -136,9 +135,13 @@ module.exports = {
       }
 
     })
-  ].concat(templates()).concat([
-    new ReloadPlugin()
-  ]),
+  ].concat(templates()).concat(
+    IS_PROD ? [
+    ] : [
+      new webpack.HotModuleReplacementPlugin(),
+      new ReloadPlugin()
+    ]
+  ),
 
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
