@@ -10,7 +10,13 @@
     text-align: center
     cursor: default
 
+    +below(640px)
+        size: rem(14px)
+        line-height: rem(14px)
+        fs: 11px
+
     &:hover
+    &._active
 
         & ^[0]__popup
             visibility: visible

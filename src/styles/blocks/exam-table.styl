@@ -59,6 +59,9 @@
         top: -1px
         margin-left: rem(3px)
 
+        +below(640px)
+            top: 0
+
     &__select
         display: inline-block
         vertical-align: baseline
@@ -84,127 +87,63 @@
         .button + .button
             margin-left: 10px
 
-.exam-table-slider
-    relative()
-    padding: 0 40px
-    margin-bottom: 30px
+        +below(680px)
+            width: 130px
 
-    &__row
-        //width: 100%
-        transition: opacity .3s ease
+            .button + .button
+                margin-left: 0
+                margin-top: 5px
 
-        &.swiper-slide-next
-        &.swiper-slide-prev
-            opacity: 0
+.exam-table-card
+    display: none
 
-    &__item
-        relative()
-        display: flex
+    +below(640px)
+        display: block
 
-    &__label
-    &__value
-        relative()
-        flex: 1 1 50%
-
-        &:after
-        &:before
-            absolute: bottom 0 left 0
-            content: ''
-            size: 100% 1px
-
-        &:before
-            display: none
-
-        &_overline:before
-            display: block
-            bottom: auto
-            top: 0
-
-    &__label
+    &__title
         @extend .exam-table__head
         @extend .exam-table__head th
-        padding-left: 10%
-        text-align: right
-        background-color: transparent
-        background-image: linear-gradient(to left, $blue-color 80%, rgba(255, 255, 255, 0))
 
-        &:after
-        &:before
-            background-image: linear-gradient(to left, #dfdfdf 80%, rgba(255, 255, 255, 0))
+    &__row
+        @extend .exam-table__head
+        @extend .exam-table__head th
+        background-color: $page-bg-color
+        font-weight: 500
+        color: $font-color
+
+    &__item
+        display: flex
+
+        &:last-child
+            border-bottom: 1px solid #e4e4e4
+
+    &__label
+        width: 50%
+        @extend .exam-table__head th
+        text-align: right
 
     &__value
+        width: 50%
         @extend .exam-table__head th
 
-        &:after
-        &:before
-            background-image: linear-gradient(to right, #dfdfdf 80%, rgba(255, 255, 255, 0))
+    &__time
+        width: 100%
+        @extend .exam-table__head th
+        text-align: center
 
-    &__prev
-    &__next
-        absolute: top 50%
-        z-index: 1
-        size: 35px
-        border: 2px solid $blue-color
-        border-radius: 50%
-        transform: translateY(-50%)
-        cursor: pointer
-        transition: border-color .3s ease
+        +below(460px)
 
-        &:before
-            absolute: top 10px
-            content: ''
-            border-bottom: 2px solid $blue-color
-            border-left: 2px solid $blue-color
-            size: 12px
-
-        &:hover
-        &:hover:before
-            border-color: darken($blue-color, 10%)
-
-    &__prev
-        left: 0
-
-        &:before
-            transform: rotate(45deg)
-            left: 12px
-
-    &__next
-        right: 0
-
-        &:before
-            transform: rotate(-135deg)
-            right: 12px
-
-    &__button
-        @extend .exam-table__button
-        @extend .exam-table__button_left
-
-        +below(480px)
-            line-height: rem(40px)
-            width: 100%
-            float: none
-
-        & + ^[0]__button
-
-            +below(480px)
-                margin: 0
-                margin-top: 20px
-
-    &__select
-        margin-top: 20px
-
-    &__options
-
-        .checkbox__input
-
-            +below(500px)
-                top: 0
-                transform: none
-
-        .checkbox__label
-            align-items center
-
-            +below(500px)
+            .checkbox__label
+                text-align: left
                 flex-direction column
                 align-items flex-start
 
+    &__button
+
+        +below(360px)
+            flex-direction: column
+
+            & ^[0]__label
+            & ^[0]__value
+                text-align: center
+                width: 100%

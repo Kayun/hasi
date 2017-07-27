@@ -1,116 +1,73 @@
 mixin table-end(rows)
-    .desktop
-        table.exam-table&attributes(attributes)
-            thead
-                tr.exam-table__head
-                    th.exam-table__name Exam Name
-                    th.exam-table__status Completion Status
-                    th HESI Score
-                    th Percentage Score
-                    th.exam-table__button-cell Reports
+    table.exam-table.exam-table_desktop&attributes(attributes)
+        thead
+            tr.exam-table__head
+                th.exam-table__name Exam Name
+                th.exam-table__status Completion Status
+                th HESI Score
+                th Percentage Score
+                th.exam-table__button-cell Reports
 
-            tbody
+        tbody
 
-                each row in rows
-                    tr.exam-table__row
-                        td= row.name
+            each row in rows
+                tr.exam-table__row
+                    td= row.name
 
-                        td= row.status
+                    td= row.status
 
-                        td= row.score
+                    td= row.score
 
-                        td= row.scorePer
+                    td= row.scorePer
 
-                        td.exam-table__button-cell
-                            .button.exam-table__button.js-font View Answers
-                            .button.exam-table__button.js-font View Rationales
-
-    .tablet
-
-        table.exam-table&attributes(attributes)
-            thead
-                tr.exam-table__head
-                    th.exam-table__name Exam Name
-                    th.exam-table__status Completion Status
-                    th HESI Score
-                    th Percentage Score
-
-            tbody
-
-                each row in rows
-                    tr.exam-table__row
-                        td= row.name
-
-                        td= row.status
-
-                        td= row.score
-
-                        td= row.scorePer
-
-        .button.exam-table__button.exam-table__button_left.js-font View Answers
-        .button.exam-table__button.exam-table__button_left.js-font View Rationales
-
-    .mobile
-
-        .exam-table-slider.swiper-container.js-font.js-slider
-
-            .swiper-wrapper
-
-                each row in rows
-                    .exam-table-slider__row.swiper-slide
-                        .exam-table-slider__item
-                            .exam-table-slider__label.exam-table-slider__label__overline Exam Name
-                            .exam-table-slider__value= row.name
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label Completion Status
-                            .exam-table-slider__value= row.status
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label HESI Score
-                            .exam-table-slider__value= row.score
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label Percentage Score
-                            .exam-table-slider__value= row.scorePer
-
-                    .exam-table-slider__row.swiper-slide
-                        .exam-table-slider__item
-                            .exam-table-slider__label.exam-table-slider__label__overline Exam Name
-                            .exam-table-slider__value= row.name
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label Completion Status
-                            .exam-table-slider__value= row.status
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label HESI Score
-                            .exam-table-slider__value= row.score
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label Percentage Score
-                            .exam-table-slider__value= row.scorePer
-
-                    .exam-table-slider__row.swiper-slide
-                        .exam-table-slider__item
-                            .exam-table-slider__label.exam-table-slider__label__overline Exam Name
-                            .exam-table-slider__value= row.name
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label Completion Status
-                            .exam-table-slider__value= row.status
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label HESI Score
-                            .exam-table-slider__value= row.score
-
-                        .exam-table-slider__item
-                            .exam-table-slider__label Percentage Score
-                            .exam-table-slider__value= row.scorePer
-
-            .exam-table-slider__prev
-            .exam-table-slider__next
+                    td.exam-table__button-cell
+                        .button.exam-table__button.js-font View Answers
+                        .button.exam-table__button.js-font View Rationales
 
 
-        .button.exam-table-slider__button.js-font View Answers
-        .button.exam-table-slider__button.js-font View Rationales
+
+    .exam-table-card.js-font
+        .exam-table-card__title Exam Name
+
+        each row in rows
+            .exam-table-card__row= row.name
+
+            .exam-table-card__item
+                .exam-table-card__label Completion Status
+                .exam-table-card__value= row.status
+
+            .exam-table-card__item
+                .exam-table-card__label HESI Score
+                .exam-table-card__value= row.score
+
+            .exam-table-card__item
+                .exam-table-card__label Percentage Score
+                .exam-table-card__value= row.scorePer
+
+            .exam-table-card__item.exam-table-card__button
+                .exam-table-card__label
+                    .button.exam-table__button.js-font View Answers
+
+                .exam-table-card__value
+                    .button.exam-table__button.js-font View Rationales
+
+            .exam-table-card__row= row.name
+
+            .exam-table-card__item
+                .exam-table-card__label Completion Status
+                .exam-table-card__value= row.status
+
+            .exam-table-card__item
+                .exam-table-card__label HESI Score
+                .exam-table-card__value= row.score
+
+            .exam-table-card__item
+                .exam-table-card__label Percentage Score
+                .exam-table-card__value= row.scorePer
+
+            .exam-table-card__item.exam-table-card__button
+                .exam-table-card__label
+                    .button.exam-table__button.js-font View Answers
+
+                .exam-table-card__value
+                    .button.exam-table__button.js-font View Rationales

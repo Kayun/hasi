@@ -2,7 +2,6 @@ import { Calculator } from './calculator';
 import $ from 'jquery';
 import 'jquery-ui/ui/widgets/sortable';
 import 'imports-loader?jQuery=jquery!jquery-ui-touch-punch';
-import Swiper from 'swiper';
 
 $(() => {
   let $fontSwitch = $('.js-font-switch');
@@ -16,8 +15,7 @@ $(() => {
   let $calculator = $('.js-calculator');
 
   let $sortContainer = $('.js-sort');
-
-  let $slider = $('.js-slider');
+  let $tooltip = $('.js-answer');
 
   let calcInstance;
 
@@ -37,11 +35,10 @@ $(() => {
     })
   }
 
-  let examSwiper = new Swiper ('.js-slider', {
-    slidesPerView: 1,
-    prevButton: '.exam-table-slider__prev',
-    nextButton: '.exam-table-slider__next',
-    loop: true
+  $tooltip.on('click', () => {
+    if ($(window).width() <= 640) {
+      $tooltip.toggleClass('_active');
+    }
   })
 
   $answers.not(':last-child').each((index, answer) => {

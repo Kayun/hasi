@@ -39,51 +39,43 @@ mixin table(rows)
 
                                     | Minute(s) Per Question)
 
-    .mobile
+    .exam-table-card.js-font
+        .exam-table-card__title Exam Name
 
-        .exam-table-slider.swiper-container.js-font.js-slider
+        each row in rows
+            .exam-table-card__row= row.name
 
-            .swiper-wrapper
+            .exam-table-card__item
+                .exam-table-card__label Completion Status
+                .exam-table-card__value= row.status
 
-                each row in rows
-                    .exam-table-slider__row.swiper-slide
-                        .exam-table-slider__item
-                            .exam-table-slider__label.exam-table-slider__label__overline Exam Name
-                            .exam-table-slider__value= row.name
+            .exam-table-card__item
+                .exam-table-card__label Exam Options
+                .exam-table-card__value
+                    label.checkbox.checkbox_without_letter.exam-table__checkbox
+                        input.checkbox__input(type="checkbox")
+                        .checkbox__label Study Mode
+                    | &nbsp;
+                    +answer("Inmediate Answers <br>& Rationales").exam-table__info.js-answer
 
-                        .exam-table-slider__item
-                            .exam-table-slider__label Completion Status
-                            .exam-table-slider__value= row.status
+            .exam-table-card__item.exam-table-card__button
+                .exam-table-card__time
+                    label.checkbox.checkbox_without_letter
+                        input.checkbox__input(type="checkbox")
+                        .checkbox__label
+                            span Timed Test Mode
 
-                        .exam-table-slider__item
-                            .exam-table-slider__label Exam Options
-                            .exam-table-slider__value
-                                label.checkbox.checkbox_without_letter.exam-table__checkbox
-                                    input.checkbox__input(type="checkbox")
-                                    .checkbox__label Study Mode
+                            span
+                                | (Average
 
-                                br
-                                br
+                                select.exam-table__select
+                                    option 1
+                                    option 2
+                                    option 3
+                                    option 4
 
-                                | (Inmediate Answers & Rationales)
+                                | Minute(s) Per Question)
 
-                        .exam-table-slider__select
-                            label.checkbox.checkbox_without_letter.exam-table-slider__options
-                                input.checkbox__input(type="checkbox")
-                                .checkbox__label
-                                    span Timed Test Mode
-                                    span
-                                        | (Average
 
-                                        select.exam-table__select
-                                            option 1
-                                            option 2
-                                            option 3
-                                            option 4
-
-                                        | Minute(s) Per Question)
-
-            .exam-table-slider__prev
-            .exam-table-slider__next
 
 
