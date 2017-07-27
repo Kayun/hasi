@@ -1,6 +1,8 @@
 .page
     relative()
-    size: 100%
+    //size: 100%
+    display: flex
+    flex-flow: column wrap
     min-height: 100%
     font-size: unit($font-size, 'px')
 
@@ -8,18 +10,26 @@
         font-size: 12px
 
     &__header
-        absolute: top 0 left 0
+        flex: none
         size: 100% rem(40px)
 
     &__container
-        height: 100%
-        padding-top: rem(40px)
-        padding-bottom: rem(30px)
+        flex: auto
+        display: flex
+        flex-direction column
+        //height: 100%
+        //min-height 100%
+        //padding-top: rem(40px)
+        //padding-bottom: rem(30px)
 
         +below(650px)
             //padding-bottom: rem(40px)
 
     &__content
+        display: flex
+        flex-direction column
+        flex: 1 0 auto
+        box-sizing content-box
         background-color: $page-color
         padding-bottom: rem(60px)
 
@@ -27,7 +37,7 @@
             padding-bottom: rem(20px)
 
     &__footer
-        absolute: bottom 0 left 0
+        flex: none
         size: 100% rem(30px)
 
         +below(650px)
@@ -37,11 +47,12 @@
     margin: 0 auto
     padding-right: rem(37px)
     padding-left: rem(23px)
-    height: 100%
+    width: 100%
+    box-sizing content-box
     max-width: 1000px
 
     +below('l')
-        width: 100%
+        width: auto
         max-width: none
         margin: 0
 
@@ -54,15 +65,15 @@
         padding-right: rem(20px)
 
 .desktop
-    display: block
+    display: none
 
-    +below(768px)
-        display: none
+    +above(768px)
+        display: block
 
 .tablet
     display: none
 
-    +between(641px, 768px)
+    +between(640px, 768px)
         display: block
 
 .mobile
@@ -75,5 +86,5 @@
 @media screen and (max-height: 760px)
 
      .page
-         height: auto
+         //height: auto
 
