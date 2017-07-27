@@ -1779,7 +1779,8 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding-top: 1rem;
 }
 .main__logo {
