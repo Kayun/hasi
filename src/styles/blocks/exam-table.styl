@@ -5,7 +5,7 @@
 
     &_desktop
 
-        +below(641px)
+        +below(640px)
             display: none
 
     &__head
@@ -97,34 +97,42 @@
 .exam-table-card
     display: none
 
+    & + &
+        margin-top: 30px
+
     +below(640px)
         display: block
 
-    &__title
-        @extend .exam-table__head
-        @extend .exam-table__head th
-
-    &__row
-        @extend .exam-table__head
-        @extend .exam-table__head th
-        background-color: $page-bg-color
-        font-weight: 500
-        color: $font-color
-
     &__item
         display: flex
+        border-bottom: 1px solid #e4e4e4
 
-        &:last-child
-            border-bottom: 1px solid #e4e4e4
+        &:first-child
+            border-top: 1px solid #e4e4e4
 
     &__label
-        width: 50%
+        width: 40%
+        @extend .exam-table__head
         @extend .exam-table__head th
-        text-align: right
 
     &__value
-        width: 50%
+        width: 60%
+        display: flex
+        flex: none
+        flex-direction: row
+        align-items center
         @extend .exam-table__head th
+
+        +between(541px, 640px)
+
+            & ^[0]__info
+              padding-left: 0
+
+        +below(540px)
+            display: block
+
+        &_block
+            display: block
 
     &__time
         width: 100%
@@ -138,12 +146,16 @@
                 flex-direction column
                 align-items flex-start
 
+    &__aligner
+        padding-left: 19px
+
     &__button
+        justify-content space-between
 
-        +below(360px)
+        +below(540px)
             flex-direction: column
+            align-items: flex-end
+            display: flex
 
-            & ^[0]__label
-            & ^[0]__value
-                text-align: center
-                width: 100%
+            .button + .button
+                margin-top: 10px
