@@ -39,42 +39,85 @@ mixin table(rows)
 
                                     | Minute(s) Per Question)
 
-    .exam-table-card.js-font
-        .exam-table-card__title Exam Name
 
         each row in rows
-            .exam-table-card__row= row.name
+            .exam-table-card.js-font
 
-            .exam-table-card__item
-                .exam-table-card__label Completion Status
-                .exam-table-card__value= row.status
+                .exam-table-card__item
+                    .exam-table-card__label Exam Name
+                    .exam-table-card__value
+                        .exam-table-card__aligner= row.name
 
-            .exam-table-card__item
-                .exam-table-card__label Exam Options
-                .exam-table-card__value
-                    label.checkbox.checkbox_without_letter.exam-table__checkbox
-                        input.checkbox__input(type="checkbox")
-                        .checkbox__label Study Mode
-                    | &nbsp;
-                    +answer("Inmediate Answers <br>& Rationales").exam-table__info.js-answer
+                .exam-table-card__item
+                    .exam-table-card__label Completion Status
+                    .exam-table-card__value
+                        .exam-table-card__aligner= row.status
 
-            .exam-table-card__item.exam-table-card__button
-                .exam-table-card__time
-                    label.checkbox.checkbox_without_letter
-                        input.checkbox__input(type="checkbox")
-                        .checkbox__label
-                            span Timed Test Mode
+                .exam-table-card__item
+                    .exam-table-card__label Exam Options
+                    .exam-table-card__value
+                        label.checkbox.checkbox_without_letter
+                            input.checkbox__input(type="checkbox")
+                            .checkbox__label Study Mode
+                        | &nbsp;
+                        .exam-table-card__aligner.exam-table-card__info (Inmediate Answers & Rationales)
 
-                            span
-                                | (Average
+                .exam-table-card__item
+                    .exam-table-card__label
+                    .exam-table-card__value.exam-table-card__value_block
+                        label.checkbox.checkbox_without_letter
+                            input.checkbox__input(type="checkbox")
+                            .checkbox__label Timed Test Mode
+                        | &nbsp;
+                        .exam-table-card__aligner
+                            | (Average
 
-                                select.exam-table__select
-                                    option 1
-                                    option 2
-                                    option 3
-                                    option 4
+                            select.exam-table__select
+                                option 1
+                                option 2
+                                option 3
+                                option 4
 
-                                | Minute(s) Per Question)
+                            | Minute(s) Per Question)
+
+            .exam-table-card.js-font
+
+                .exam-table-card__item
+                    .exam-table-card__label Exam Name
+                    .exam-table-card__value
+                        .exam-table-card__aligner= row.name
+
+                .exam-table-card__item
+                    .exam-table-card__label Completion Status
+                    .exam-table-card__value
+                        .exam-table-card__aligner= row.status
+
+                .exam-table-card__item
+                    .exam-table-card__label Exam Options
+                    .exam-table-card__value
+                        label.checkbox.checkbox_without_letter
+                            input.checkbox__input(type="checkbox")
+                            .checkbox__label Study Mode
+                        | &nbsp;
+                        .exam-table-card__aligner.exam-table-card__info (Inmediate Answers & Rationales)
+
+                .exam-table-card__item
+                    .exam-table-card__label
+                    .exam-table-card__value.exam-table-card__value_block
+                        label.checkbox.checkbox_without_letter
+                            input.checkbox__input(type="checkbox")
+                            .checkbox__label Timed Test Mode
+                        | &nbsp;
+                        .exam-table-card__aligner
+                            | (Average
+
+                            select.exam-table__select
+                                option 1
+                                option 2
+                                option 3
+                                option 4
+
+                            | Minute(s) Per Question)
 
 
 

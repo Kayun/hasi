@@ -26,11 +26,14 @@ mixin table-end(rows)
 
 
 
-    .exam-table-card.js-font
-        .exam-table-card__title Exam Name
 
-        each row in rows
-            .exam-table-card__row= row.name
+
+    each row in rows
+        .exam-table-card.js-font
+
+            .exam-table-card__item
+                .exam-table-card__label Exam Name
+                .exam-table-card__value= row.name
 
             .exam-table-card__item
                 .exam-table-card__label Completion Status
@@ -44,14 +47,17 @@ mixin table-end(rows)
                 .exam-table-card__label Percentage Score
                 .exam-table-card__value= row.scorePer
 
-            .exam-table-card__item.exam-table-card__button
+            .exam-table-card__item
                 .exam-table-card__label
+                .exam-table-card__value.exam-table-card__button
                     .button.exam-table__button.js-font View Answers
-
-                .exam-table-card__value
                     .button.exam-table__button.js-font View Rationales
 
-            .exam-table-card__row= row.name
+        .exam-table-card.js-font
+
+            .exam-table-card__item
+                .exam-table-card__label Exam Name
+                .exam-table-card__value= row.name
 
             .exam-table-card__item
                 .exam-table-card__label Completion Status
@@ -65,9 +71,8 @@ mixin table-end(rows)
                 .exam-table-card__label Percentage Score
                 .exam-table-card__value= row.scorePer
 
-            .exam-table-card__item.exam-table-card__button
+            .exam-table-card__item
                 .exam-table-card__label
+                .exam-table-card__value.exam-table-card__button
                     .button.exam-table__button.js-font View Answers
-
-                .exam-table-card__value
                     .button.exam-table__button.js-font View Rationales
