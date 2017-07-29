@@ -80,45 +80,6 @@ mixin table(rows)
 
                             | Minute(s) Per Question)
 
-            .exam-table-card.js-font
-
-                .exam-table-card__item
-                    .exam-table-card__label Exam Name
-                    .exam-table-card__value
-                        .exam-table-card__aligner= row.name
-
-                .exam-table-card__item
-                    .exam-table-card__label Completion Status
-                    .exam-table-card__value
-                        .exam-table-card__aligner= row.status
-
-                .exam-table-card__item
-                    .exam-table-card__label Exam Options
-                    .exam-table-card__value
-                        label.checkbox.checkbox_without_letter
-                            input.checkbox__input(type="checkbox")
-                            .checkbox__label Study Mode
-                        | &nbsp;
-                        .exam-table-card__aligner.exam-table-card__info (Inmediate Answers & Rationales)
-
-                .exam-table-card__item
-                    .exam-table-card__label
-                    .exam-table-card__value.exam-table-card__value_block
-                        label.checkbox.checkbox_without_letter
-                            input.checkbox__input(type="checkbox")
-                            .checkbox__label Timed Test Mode
-                        | &nbsp;
-                        .exam-table-card__aligner
-                            | (Average
-
-                            select.exam-table__select
-                                option 1
-                                option 2
-                                option 3
-                                option 4
-
-                            | Minute(s) Per Question)
-
 
 
 
