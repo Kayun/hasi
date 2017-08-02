@@ -35,9 +35,12 @@ $(() => {
     })
   }
 
-  $tooltip.on('click', () => {
+  $tooltip.on('click', event => {
+    event.stopPropagation();
+
     if ($(window).width() <= 640) {
       $tooltip.toggleClass('_active');
+      $(window).one('click', () => $tooltip.removeClass('_active'))
     }
   })
 
