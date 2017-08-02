@@ -1203,6 +1203,7 @@ html {
   line-height: 14px;
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 12px;
 }
 @media only screen and (max-width: 40em) {
   .exam-table_desktop {
@@ -1282,6 +1283,11 @@ html {
   height: 20px;
   line-height: 1.25rem;
 }
+@media only screen and (max-width: 40em) {
+  .exam-table__select {
+    margin-left: 0;
+  }
+}
 .exam-table__button {
   width: 8.125rem;
   padding: 0;
@@ -1347,18 +1353,26 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
-@media only screen and (min-width: 33.8125em) and (max-width: 40em) {
-  .exam-table-card__value .exam-table-card__info {
-    padding-left: 0;
-  }
-}
-@media only screen and (max-width: 33.75em) {
-  .exam-table-card__value {
-    display: block;
-  }
-}
 .exam-table-card__value_block {
   display: block;
+}
+.exam-table-card__info {
+  margin-left: auto;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-bottom: 2px;
+  border-left: 1px solid #e4e4e4;
+}
+.exam-table-card__info .answer__popup {
+  left: auto;
+  right: -10px;
+  -webkit-transform: none;
+          transform: none;
+}
+.exam-table-card__info .answer__popup:before {
+  left: 89%;
 }
 .exam-table-card__time {
   width: 100%;
@@ -1400,6 +1414,12 @@ html {
   .exam-table-card__button .button + .button {
     margin-top: 10px;
   }
+}
+.exam-table-card__descr {
+  padding-top: 5px;
+  color: #777;
+  font-size: 10px;
+  line-height: 18px;
 }
 .footer {
   padding-top: 0.4375rem;
@@ -1877,7 +1897,6 @@ html {
 .main__button {
   float: right;
   padding: 0 2.1875rem;
-  margin-top: 0.75rem;
 }
 .main__button_w_130 {
   padding: 0;
@@ -2029,6 +2048,7 @@ html {
   padding-top: 1.0625rem;
 }
 .welcome__info {
+  margin-bottom: 0.75rem;
   padding: 1.0625rem 0.75rem;
   border: 1px solid #dfdfdf;
   min-height: 18.9375rem;

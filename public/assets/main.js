@@ -11169,9 +11169,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   }
 
-  $tooltip.on('click', function () {
+  $tooltip.on('click', function (event) {
+    event.stopPropagation();
+
     if ((0, _jquery2.default)(window).width() <= 640) {
       $tooltip.toggleClass('_active');
+      (0, _jquery2.default)(window).one('click', function () {
+        return $tooltip.removeClass('_active');
+      });
     }
   });
 
