@@ -2,6 +2,7 @@
     line-height: 14px
     border-collapse: collapse
     width: 100%
+    margin-bottom: 12px
 
     &_desktop
 
@@ -70,6 +71,9 @@
         height: 20px
         line-height: rem(20px)
 
+        +below(640px)
+            margin-left: 0
+
     &__button
         width: rem(130px)
         padding: 0
@@ -123,16 +127,25 @@
         align-items center
         @extend .exam-table__head th
 
-        +between(541px, 640px)
-
-            & ^[0]__info
-              padding-left: 0
-
-        +below(540px)
-            display: block
-
         &_block
             display: block
+
+    &__info
+        margin-left: auto
+        margin-top: -2px
+        margin-bottom: -2px
+        padding-top: 2px
+        padding-left: 10px
+        padding-bottom: 2px
+        border-left: 1px solid #e4e4e4
+
+        .answer__popup
+            left: auto
+            right: -10px
+            transform: none
+
+            &:before
+                left: 89%
 
     &__time
         width: 100%
@@ -159,3 +172,9 @@
 
             .button + .button
                 margin-top: 10px
+
+    &__descr
+        padding-top: 5px
+        color: #777777
+        font-size: 10px
+        line-height: 18px

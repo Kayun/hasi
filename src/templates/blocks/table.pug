@@ -60,7 +60,7 @@ mixin table(rows)
                             input.checkbox__input(type="checkbox")
                             .checkbox__label Study Mode
                         | &nbsp;
-                        .exam-table-card__aligner.exam-table-card__info (Inmediate Answers & Rationales)
+                        .exam-table-card__info: +answer("Inmediate Answers <br>& Rationales").js-answer
 
                 .exam-table-card__item
                     .exam-table-card__label
@@ -69,16 +69,16 @@ mixin table(rows)
                             input.checkbox__input(type="checkbox")
                             .checkbox__label Timed Test Mode
                         | &nbsp;
-                        .exam-table-card__aligner
-                            | (Average
-
+                        .exam-table-card__aligner.exam-table-card__descr
+                            span Average Per Question:
+                            br
                             select.exam-table__select
                                 option 1
                                 option 2
                                 option 3
                                 option 4
-
-                            | Minute(s) Per Question)
+                            | &nbsp;
+                            span Minute(s)
 
 
 
