@@ -73,6 +73,10 @@
 
         +below(640px)
             margin-left: 0
+            border: 1px solid #bbb9bd
+            background: transparent
+            appearance: menulist
+            border-radius: 0
 
     &__button
         width: rem(130px)
@@ -112,6 +116,9 @@
         display: flex
         border-bottom: 1px solid #e4e4e4
 
+        &_no_border
+            border-bottom: none
+
         &:first-child
             border-top: 1px solid #e4e4e4
 
@@ -127,6 +134,9 @@
         flex-direction: row
         align-items center
         @extend .exam-table__head th
+
+        &_border
+            border-bottom: 1px solid #e4e4e4
 
         &_block
             display: block
