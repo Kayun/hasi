@@ -35,12 +35,15 @@ $(() => {
     })
   }
 
-  $tooltip.on('click', event => {
-    event.stopPropagation();
+  $(document).on('click touchstart', event => {
+    let $target = $(event.target);
 
-    if ($(window).width() <= 640) {
-      $tooltip.toggleClass('_active');
-      $(window).one('click', () => $tooltip.removeClass('_active'))
+    if ($(window).width() <= 1024) {
+      if ($target.closest('.js-answer').length) {
+        $tooltip.toggleClass('_active');
+      } else {
+        $tooltip.removeClass('_active')
+      }
     }
   })
 

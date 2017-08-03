@@ -10,12 +10,20 @@
     text-align: center
     cursor: default
 
-    +below(640px)
+    +below(700px)
         size: rem(14px)
         line-height: rem(14px)
         fs: 11px
 
     &:hover
+
+        +above(1024px)
+
+            & ^[0]__popup
+                      visibility: visible
+                      opacity: 1
+                      transition-delay: 0s
+
     &._active
 
         & ^[0]__popup
