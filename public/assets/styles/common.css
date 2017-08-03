@@ -1240,7 +1240,6 @@ html {
   line-height: 14px;
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 12px;
 }
 @media only screen and (max-width: 40em) {
   .exam-table_desktop {
