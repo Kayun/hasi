@@ -1968,9 +1968,11 @@ html {
 .main__button_mr_10 {
   margin-right: 10px;
 }
-.main__button_fs_14 {
-  font-size: 9px;
-  font-size: 0.8125rem;
+@media only screen and (max-width: 30em) {
+  .main__button_fs_14 {
+    font-size: 9px;
+    font-size: 0.8125rem;
+  }
 }
 @media only screen and (max-width: 30em) {
   .main__button {
