@@ -1358,7 +1358,6 @@ html {
 }
 .exam-table-card {
   display: none;
-  margin-bottom: 20px;
 }
 .exam-table-card + .exam-table-card {
   margin-top: 30px;
