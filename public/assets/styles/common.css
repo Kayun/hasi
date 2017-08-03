@@ -613,7 +613,7 @@ html {
   text-align: center;
   cursor: default;
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 43.75em) {
   .answer {
     width: 0.875rem;
     height: 0.875rem;
@@ -621,7 +621,14 @@ html {
     font-size: 11px;
   }
 }
-.answer:hover .answer__popup,
+@media only screen and (min-width: 64em) {
+  .answer:hover .answer__popup {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+  }
+}
 .answer._active .answer__popup {
   visibility: visible;
   opacity: 1;
@@ -792,7 +799,10 @@ html {
 .checkbox__input:focus + .checkbox__label:before {
   border-color: #529af8;
 }
-@media only screen and (max-width: 40em) {
+.checkbox__input:not(:checked) + .checkbox__label:hover:before {
+  border-color: #bbb9bd;
+}
+@media only screen and (max-width: 43.75em) {
   .checkbox__input {
     opacity: 0;
   }
@@ -804,7 +814,7 @@ html {
 .checkbox__label:hover:before {
   border-color: #529af8;
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 43.75em) {
   .checkbox__label:before {
     display: block;
     border-radius: 2px;
@@ -1297,7 +1307,7 @@ html {
   top: -1px;
   margin-left: 0.1875rem;
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 43.75em) {
   .exam-table__info {
     top: 0;
   }
@@ -1379,6 +1389,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1397,7 +1410,9 @@ html {
   display: block;
 }
 .exam-table-card__info {
-  margin-left: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   margin-top: -2px;
   margin-bottom: -2px;
   padding-top: 2px;

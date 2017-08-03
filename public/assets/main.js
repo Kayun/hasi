@@ -11169,14 +11169,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   }
 
-  $tooltip.on('click', function (event) {
-    event.stopPropagation();
+  (0, _jquery2.default)(document).on('click touchstart', function (event) {
+    var $target = (0, _jquery2.default)(event.target);
 
-    if ((0, _jquery2.default)(window).width() <= 640) {
-      $tooltip.toggleClass('_active');
-      (0, _jquery2.default)(window).one('click', function () {
-        return $tooltip.removeClass('_active');
-      });
+    if ((0, _jquery2.default)(window).width() <= 1024) {
+      if ($target.closest('.js-answer').length) {
+        $tooltip.toggleClass('_active');
+      } else {
+        $tooltip.removeClass('_active');
+      }
     }
   });
 
