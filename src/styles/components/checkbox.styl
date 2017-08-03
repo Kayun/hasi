@@ -20,11 +20,12 @@ $checkbox-blue-color = #529af8
         &:focus + ^[0]__label:before
           border-color: $checkbox-blue-color
 
+        +below(640px)
+            opacity: 0
+
     &__label
 
         &:before
-            display: none
-
         &:after
             display: none
 
@@ -32,3 +33,26 @@ $checkbox-blue-color = #529af8
 
             &:before
                 border-color: $checkbox-blue-color
+
+        +below(640px)
+
+            &:before
+                display: block
+                border-radius: 2px
+                border-color: #bbb9bd
+
+            &:after
+                display: block
+                absolute: left 3px top 4px
+                size: 8px 4px
+                border-left: 1px solid #fff
+                border-bottom: 1px solid #fff
+                background-color: transparent
+                border-radius: 0
+                transform: rotate(-45deg)
+
+            &:hover
+
+                &:before
+                    opacity: 1
+

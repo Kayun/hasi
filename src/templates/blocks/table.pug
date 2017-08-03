@@ -45,17 +45,15 @@ mixin table(rows)
 
                 .exam-table-card__item
                     .exam-table-card__label Exam Name
-                    .exam-table-card__value
-                        .exam-table-card__aligner= row.name
+                    .exam-table-card__value= row.name
 
                 .exam-table-card__item
                     .exam-table-card__label Completion Status
-                    .exam-table-card__value
-                        .exam-table-card__aligner= row.status
+                    .exam-table-card__value= row.status
 
-                .exam-table-card__item
+                .exam-table-card__item.exam-table-card__item_no_border
                     .exam-table-card__label Exam Options
-                    .exam-table-card__value
+                    .exam-table-card__value.exam-table-card__value_border
                         label.checkbox.checkbox_without_letter
                             input.checkbox__input(type="checkbox")
                             .checkbox__label Study Mode
