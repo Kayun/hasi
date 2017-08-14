@@ -1,4 +1,4 @@
-mixin test(count, question, type, answers)
+mixin test(count, question, type, answers, nextPage)
     form.test.js-question-form(href="#")
         .test__progress(style="width: 75%")
             .test__progress-point: span 75%
@@ -20,5 +20,5 @@ mixin test(count, question, type, answers)
             a.test__feedback.js-font(href="#") Feedback / Problems
 
             .test__control-buttons
-                .button.test__button.js-question-submit.js-font Submit & Continue
-                .button.test__button.js-font Submit & Pause/Leave Exam
+                a.button.test__button.js-question-submit.js-font(href= nextPage || '#') Submit & Continue
+                a.button.test__button.js-font(href="index_07.html") Submit & Pause/Leave Exam

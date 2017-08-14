@@ -20,5 +20,6 @@ block content
         'This is a fill in the blank question. Please type your answer in the box provided.'
         )
     .main__test
-        +test(102, question, 'block'): input.input.test__input(type="text", value="12.5", name="answer")
+        +test(102, question, 'block', [], 'index_04.html')
+            input.input.test__input(type="number", value="1000000", name="answer")
 

@@ -4,7 +4,7 @@ include ../blocks/test
 include ../blocks/sort
 
 block date
-    .main__date.js-font
+    .main__date.desktop.js-font
         strong Date :
         = " "
         | Jan 17, 2017
@@ -21,7 +21,7 @@ block content
         'Please use the mouse to click on items and move them to position answers in the correct order. Be concise and accurate.'
         )
     .main__test
-        +test(103, question, 'block')
+        +test(103, question, 'block', [], 'index_07.html')
             +sort([
                 ['Remove indwelling devices.', 'a'],
                 ['Invite family members to view the deceased.', 'b'],

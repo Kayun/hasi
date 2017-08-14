@@ -2,7 +2,7 @@ extends ../layouts/index
 include ../blocks/table
 
 block date
-    .main__date.js-font
+    .main__date.desktop.js-font
         strong Date :
         = " "
         | Jan 17, 2017
@@ -17,4 +17,4 @@ block content
             {name: "Free HESI RN Exit Practice", status: "Not Started"}
         ]).js-font
 
-        .button.main__button.main__button_w_130.main__button_mr_10.js-font Start Exam
+        a.button.main__button.main__button_w_130.main__button_mr_10.js-font(href="index_06.html") Start Exam
