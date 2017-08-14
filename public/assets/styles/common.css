@@ -682,6 +682,7 @@ html {
   border-radius: 1px;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
@@ -1884,9 +1885,11 @@ html {
 }
 @media only screen and (max-width: 25em) {
   .test__input {
-    line-height: 1.4375rem;
-    height: 1.5625rem;
-    width: 100%;
+    padding: 0 0.9375rem;
+    line-height: 2.375rem;
+    height: 2.5rem;
+    width: 5.625rem;
+    text-align: center;
   }
 }
 .main {
