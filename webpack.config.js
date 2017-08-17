@@ -15,15 +15,22 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const IS_PROD = process.env.NODE_ENV === 'production'
 
 let templates = () => {
-  let templatesPath = `${SRC_DIR}/templates/pages`;
-  let files = fs.readdirSync(templatesPath);
+  const TEMPLATE_DIRS = [''];
 
-  return files.map(file => {
-    return new HtmlWebpackPlugin({
+  return TEMPLATE_DIRS.reduce((array, dir) => {
+
+    let templatesPath = `${SRC_DIR}/templates/pages/${dir}`;
+
+    if (!fs.existsSync(templatesPath)) return array;
+
+    let files = fs.readdirSync(templatesPath).filter(file => file.indexOf('.pug') !== -1);
+    let plugins = files.map(file => new HtmlWebpackPlugin({
       filename: `${path.basename(file, '.pug')}.html`,
       template: `${templatesPath}/${file}`
-    })
-  })
+    }))
+
+    return array.concat(plugins);
+  }, []);
 };
 
 module.exports = {
@@ -83,7 +90,10 @@ module.exports = {
       {
         test: /\.pug$/,
         use: {
-          loader: 'pug-loader'
+          loader: 'pug-loader',
+          options: {
+            root: `${SRC_DIR}/templates/`
+          }
         }
       },
       {

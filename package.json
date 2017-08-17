@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "cross-env": "^5.0.1",
-    "html-webpack-harddisk-plugin": "^0.1.0",
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-touch-punch": "~0.2.3",

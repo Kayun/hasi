@@ -1,9 +1,9 @@
-extends ../layouts/index
-include ../blocks/counter
-include ../blocks/test
+extends /layouts/index
+include /blocks/counter
+include /blocks/test
 
 block date
-    .main__date.js-font
+    .main__date.desktop.js-font
         strong Date :
         = " "
         | Jan 17, 2017
@@ -12,14 +12,18 @@ block font
     +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
-    - var question = 'A client is prescribed 1200 units of intravenous heparin per hour. The medication is provided as 25,000 units in 2.5 dl (deciliters) of normal saline. Calculate the rate in which the nurse should administer this medication in ml (mililiters) per hour. (Only enter the numeric value.)'
+    - var question = 'A client’s caregiver is learning how to care for a client’s wound and drain. Which techique of cleansing, if taught to the caregiver, would decrease the chance of the client developing an infection ?'
 
     .main__counter
         +counter(
-        'Fill-In Choice Single Answer',
-        'This is a fill in the blank question. Please type your answer in the box provided.'
+            'Multiple-Choice Single-Answer',
+            'Select your answer from the options on the left.'
         )
     .main__test
-        +test(102, question, 'block', [], 'index_04.html')
-            input.input.test__input(type="number", value="1000000", name="answer")
+        +test(100, question, 'radio', [
+            ['A', 'Lorem ipsum dolor sit amet.'],
+            ['B', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
+            ['C', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
+            ['D', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.']
+        ], 'index_04.html')
 

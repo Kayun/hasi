@@ -1,6 +1,4 @@
-extends ../layouts/index
-include ../blocks/counter
-include ../blocks/test
+extends /layouts/index
 
 block date
     .main__date.desktop.js-font
@@ -12,17 +10,29 @@ block font
     +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
-    - var question = 'A client’s caregiver is learning how to care for a client’s wound and drain. Which techique of cleansing, if taught to the caregiver, would decrease the chance of the client developing an infection ?'
+    .main__inner.start.welcome
 
-    .main__counter
-        +counter(
-        'Multiple-Choice Single-Answer',
-        'Select your answer from the options on the left.'
-        )
-    .main__test
-        +test(100, question, 'radio', [
-            ['A', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
-            ['B', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
-            ['C', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.'],
-            ['D', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eium tempor.']
-        ])
+        .welcome__info
+
+            .welcome__title.js-font RN Exit Exam Practice
+
+            .welcome__text.start__info-text.js-font
+                | Welcome to the HESI Exit Exam practice. This exam is designed to assess your
+                | readiness for the HESI RN Exit Exam.
+
+            .welcome__text.start__info-text.js-font
+                | The options A, B, C, or D, etc, are available for most questions. Take your time
+                | to read the instructions of every question. You should confirm your answer before
+                | you proceed to the next question.
+
+            .welcome__text.start__info-text.js-font
+                | You are allowed to use your Windows, or real life, calculator during this exam.
+
+            .welcome__text.start__info-text.js-font
+                | Rationales for the items you missed will appear on the screen after the last question,
+                = " "
+                strong: i prior
+                = " "
+                |to exiting the exam.
+
+        a.button.main__button.welcome__button.js-font(href="index_03.html") Continue

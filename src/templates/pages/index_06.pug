@@ -1,4 +1,7 @@
-extends ../layouts/index
+extends /layouts/index
+include /blocks/counter
+include /blocks/test
+include /blocks/sort
 
 block date
     .main__date.desktop.js-font
@@ -10,29 +13,19 @@ block font
     +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
-    .main__inner.start.welcome
+    - var question = 'A recently deceased client needs post-mortem care. In which order should the nurse provide this care? (Arrange from first on top to last on bottom.)'
 
-        .welcome__info
-
-            .welcome__title.js-font RN Exit Exam Practice
-
-            .welcome__text.start__info-text.js-font
-                | Welcome to the HESI Exit Exam practice. This exam is designed to assess your
-                | readiness for the HESI RN Exit Exam.
-
-            .welcome__text.start__info-text.js-font
-                | The options A, B, C, or D, etc, are available for most questions. Take your time
-                | to read the instructions of every question. You should confirm your answer before
-                | you proceed to the next question.
-
-            .welcome__text.start__info-text.js-font
-                | You are allowed to use your Windows, or real life, calculator during this exam.
-
-            .welcome__text.start__info-text.js-font
-                | Rationales for the items you missed will appear on the screen after the last question,
-                = " "
-                strong: i prior
-                = " "
-                |to exiting the exam.
-
-        a.button.main__button.welcome__button.js-font(href="index_00.html") Continue
+    .main__counter
+        +counter(
+        'Ranking',
+        'Please use the mouse to click on items and move them to position answers in the correct order. Be concise and accurate.'
+        )
+    .main__test
+        +test(103, question, 'block', [], 'index_07.html')
+            +sort([
+                ['Remove indwelling devices.', 'a'],
+                ['Invite family members to view the deceased.', 'b'],
+                ['Collect specimens as requested.', 'c'],
+                ['Verify if autopsy and/or tissue and organ donation requests have been made.', 'd'],
+                ['Bathe and dress the body of the deceased.', 'e']
+            ])
