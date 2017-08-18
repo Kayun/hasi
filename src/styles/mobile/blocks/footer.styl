@@ -1,0 +1,64 @@
+.footer
+    color: #ffffff
+    padding: rem(70px) rem(40px)
+    background-image: linear-gradient(to top, #0e6dc0, #2193f8)
+
+    &__social
+        display: flex
+        justify-content: center
+        margin: 0
+        margin-bottom: rem(30px)
+        padding: 0
+        list-style: none
+
+        li:not(:first-child)
+            margin-left: rem(25px)
+
+    &__social-link
+        display: block
+
+        &._google
+            sprite2x($google)
+
+        &._twitter
+            sprite2x($twitter)
+
+        &._facebook
+            sprite2x($facebook)
+
+        +below(400px)
+
+            &._google
+                sprite2x-scale($google, $scaling-factor-less)
+
+            &._twitter
+                sprite2x-scale($twitter, $scaling-factor-less)
+
+            &._facebook
+                sprite2x-scale($facebook, $scaling-factor-less)
+
+    &__text
+        margin: 0
+        font-family: 'Montserrat', sans-serif
+        font-weight: 300
+        text-align: center
+        line-height: rem(23px)
+        fs: rem(13px)
+
+    &__nav
+        margin-top: rem(26px)
+        display: flex
+        justify-content: center
+
+    &__link
+        @extend .link
+
+        &:not(:first-child)
+            relative()
+            margin-left: rem(20px)
+
+            &:before
+                absolute: top 0 left -10px
+                size: 1px 100%
+                background-color: #ffffff
+                content: ''

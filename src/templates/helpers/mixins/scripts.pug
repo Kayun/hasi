@@ -1,0 +1,5 @@
+mixin scripts(modules)
+    each module in modules
+        if htmlWebpackPlugin.files.chunks[module]
+            script(src= htmlWebpackPlugin.files.chunks[module].entry)
+

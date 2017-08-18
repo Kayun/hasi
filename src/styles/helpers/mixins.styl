@@ -3,12 +3,26 @@ size($width, $height = $width) {
     height: $height
 }
 
+button-reset()
+    padding: 0
+    background-color: transparent
+    border: none
+    outline: none
+
 sprite2x($sprite) {
     spriteImage($sprite)
     background-position: ($sprite[2] / 2) ($sprite[3] / 2);
     width: ($sprite[4] / 2)
     height: ($sprite[5] / 2)
     background-size: ($spritesheet_width / 2) ($spritesheet_height / 2)
+}
+
+sprite2x-scale($sprite, $scale) {
+    spriteImage($sprite)
+    background-position: ($sprite[2] / 2 * $scale) ($sprite[3] / 2 * $scale);
+    width: ($sprite[4] / 2 * $scale)
+    height: ($sprite[5] / 2 * $scale)
+    background-size: ($spritesheet_width / 2 * $scale) ($spritesheet_height / 2 * $scale)
 }
 
 clearfix()

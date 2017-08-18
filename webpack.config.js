@@ -7,12 +7,15 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReloadPlugin = require('reload-html-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const axis = require('axis');
 const rupture = require('rupture');
 
 const SRC_DIR = path.resolve(__dirname, 'src');
 const IS_PROD = process.env.NODE_ENV === 'production'
+
+let hashInclude = (hasName, sufix = '') => IS_PROD ? `.[${hasName}:20]${sufix}` : ''
 
 let templates = () => {
   const TEMPLATE_DIRS = [''];
@@ -26,7 +29,8 @@ let templates = () => {
     let files = fs.readdirSync(templatesPath).filter(file => file.indexOf('.pug') !== -1);
     let plugins = files.map(file => new HtmlWebpackPlugin({
       filename: `${path.basename(file, '.pug')}.html`,
-      template: `${templatesPath}/${file}`
+      template: `${templatesPath}/${file}`,
+      inject: false
     }))
 
     return array.concat(plugins);
@@ -35,12 +39,12 @@ let templates = () => {
 
 module.exports = {
   context: SRC_DIR,
-  entry: [
-    './styles/index.styl',
-    './scripts/index.js'
-  ],
+  entry: {
+    mobile: './styles/mobile.styl',
+    common: ['./scripts/index.js', './styles/index.styl']
+  },
   output: {
-    filename: 'assets/[name].js',
+    filename: `assets/scripts/[name]${hashInclude('hash', '.min')}.js`,
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
@@ -64,6 +68,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
+                minimize: IS_PROD,
                 sourceMap: true
               }
             },
@@ -90,16 +95,19 @@ module.exports = {
       {
         test: /\.pug$/,
         use: {
-          loader: 'pug-loader',
-          options: {
-            root: `${SRC_DIR}/templates/`
-          }
+          loader: `pug-loader?root=${SRC_DIR}/templates/`
         }
       },
       {
         test: /\.(jpg|jpeg|png)$/,
         use: {
-          loader: 'file-loader?name=assets/images/[name].[hash:20].[ext]'
+          loader: `file-loader?name=assets/images/[name]${hashInclude('hash')}.[ext]`
+        }
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        use: {
+          loader: `file-loader?name=assets/fonts/[name].[ext]`
         }
       },
       {
@@ -129,23 +137,29 @@ module.exports = {
       fileName: './assets.json',
       writeToFileEmit: true
     }),
-    new ExtractTextPlugin('assets/styles/common.css'),
+    new ExtractTextPlugin(`assets/styles/[name]${hashInclude('contenthash', '.min')}.css`),
     new SpritesmithPlugin({
       src: {
         cwd: path.resolve(__dirname, 'src/images/sprite'),
         glob: '*.png'
       },
       target: {
-        image: path.resolve(__dirname, 'public/assets/images/sprite.png'),
+        image: path.resolve(__dirname, `public/assets/images/sprite${hashInclude('hash')}.png`),
         css: path.resolve(__dirname, 'src/styles/helpers/sprite.styl')
       },
       apiOptions: {
-        cssImageRef: "/assets/images/sprite.png"
+        cssImageRef: `/assets/images/sprite${hashInclude('hash')}.png`
       }
 
     })
   ].concat(templates()).concat(
     IS_PROD ? [
+      new UglifyJSPlugin({
+        sourceMap: true,
+        compress: {
+          warnings: false
+        }
+      })
     ] : [
       new webpack.HotModuleReplacementPlugin(),
       new ReloadPlugin()

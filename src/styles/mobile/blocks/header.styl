@@ -1,0 +1,43 @@
+$logo-size = { w: 244px, h: 100px }
+$toggle-size = { w: 46px, h: 39px }
+
+$padding = 38px
+
+.header
+    relative()
+    padding: rem(3px) rem($padding)
+    height: rem(106px)
+    background-color: #f4f4ee
+
+    &__logo
+        display: block
+        size: rem($logo-size.w) rem($logo-size.h)
+
+    &__toggle
+        relative()
+        margin: rem(30px) 0
+        float: right
+        size: rem($toggle-size.w) rem($toggle-size.h)
+        button-reset()
+
+        &:before
+            absolute top 0 left 0
+            size: 100% rem(7px)
+            background-color: #34495e
+            border-radius: 2px
+            content: ''
+            box-shadow: 0 rem(16px) #34495e, 0 rem(32px) #34495e
+
+    &__menu
+        absolute: top rem(16px) right rem(104px)
+        width: 65%
+        max-width: 312px
+        opacity: 0
+        visibility: hidden
+        transition: opacity .3s ease, visibility 0s linear .3s
+        will-change: opacity
+
+        &._open
+            opacity: 1
+            visibility: visible
+            transition-delay: 0s
