@@ -1,6 +1,6 @@
 {
   "name": "hasi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Kayun Artyom <kayun.artem@gmail.com>",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
