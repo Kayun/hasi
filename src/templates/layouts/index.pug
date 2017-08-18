@@ -1,16 +1,19 @@
-include ../helpers/variables
-include ../helpers/mixins
+include /helpers/variables
+include /helpers/mixins
 
 doctype html
 html(lang="en")
     head
         meta(charset='utf-8')
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+
+        +styles(["common"])
+
         title HESI exam study
     body
         .page
             .page__header
-                include ../blocks/header
+                include /blocks/header
 
             .page__container
                 .page__content.container
@@ -24,4 +27,6 @@ html(lang="en")
                             block content
 
             .page__footer
-                include ../blocks/footer
+                include /blocks/footer
+
+        +scripts(["common"])

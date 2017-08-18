@@ -1,0 +1,5 @@
+mixin styles(modules)
+    each module in modules
+        if htmlWebpackPlugin.files.chunks[module]
+            each css in htmlWebpackPlugin.files.chunks[module].css
+                link(rel="stylesheet", href= css)

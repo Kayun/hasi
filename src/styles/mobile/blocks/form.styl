@@ -1,0 +1,66 @@
+.form
+    background-color: #3c72b1
+    padding: rem(32px) rem(32px) rem(40px)
+    color: #ffffff
+    font-family: 'Montserrat', sans-serif
+
+    &__title
+        font-weight: 700
+        margin: 0
+        text-align: center
+        fs: rem(37px)
+        letter-spacing: rem(7px)
+
+    &__text
+        font-weight: 300
+        font-size: rem(22px)
+        line-height: rem(32px)
+        text-align: center
+
+    &__controls
+        margin-top: rem(41px)
+
+    &__item
+        relative()
+
+        &:not(:first-child)
+            margin-top: rem(22px)
+
+    &__icon
+        vertically-align()
+        absolute: left rem(28px)
+
+        &._user
+            sprite2x($user)
+
+        &._mail
+            sprite2x($mail)
+
+    &__input
+        border: none
+        padding: 0 rem(20px) 0 rem(90px)
+        height: rem(66px)
+        border-radius: 4px
+        font-weight: 300
+        font-family: 'Montserrat', sans-serif
+        width: 100%
+        fs: rem(26px)
+        vertical-align: top
+
+        &::placeholder
+            color: #959595
+
+    &__button
+        display: block
+        width: 100%
+        button-reset()
+        font-weight: 600
+        font-family: 'Montserrat', sans-serif
+        height: rem(66px)
+        border-radius: 4px
+        fs: rem(26px)
+        letter-spacing: -2px
+        background-image: linear-gradient(to bottom, #ffd600, #ffad00)
+        text-align: center
+
+

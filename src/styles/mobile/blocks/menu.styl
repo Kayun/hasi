@@ -1,0 +1,43 @@
+.menu
+    relative()
+    padding: rem(17px)
+    padding-bottom: rem(35px)
+    background-color: #fff
+    border-radius: 8px
+    margin: 0
+    list-style: none
+    box-shadow: 0 0 10px rgba(0, 0, 0 , 0.15)
+
+    &:before
+        absolute: top rem(29px) right -8px
+        content: ''
+        border-left: 9px solid #fff
+        border-top: 9px solid transparent
+        border-bottom: 9px solid transparent
+
+    &__item
+        relative()
+        display: block
+        padding: 0 rem(22px)
+        line-height: rem(52px)
+        text-decoration: none
+        text-transform: uppercase
+        color: #b0b0b0
+        fs: rem(20px)
+        font-family: 'Montserrat', sans-serif
+        transition()
+
+        &:before
+            vertically-align()
+            absolute: right rem(20px)
+            content: ''
+            sprite2x($round)
+            opacity: 0
+            transition()
+
+        &:hover
+        &:active
+            background-color: #e3e7eb
+
+            &:before
+                opacity: 1

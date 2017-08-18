@@ -1,6 +1,6 @@
 {
   "name": "hasi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Kayun Artyom <kayun.artem@gmail.com>",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "cross-env": "^5.0.1",
-    "html-webpack-harddisk-plugin": "^0.1.0",
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-touch-punch": "~0.2.3",
@@ -41,6 +40,7 @@
     "style-loader": "^0.18.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^2.6.0",
     "webpack-dev-server": "^2.4.5",
     "webpack-manifest-plugin": "^1.1.0",

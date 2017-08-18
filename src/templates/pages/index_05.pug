@@ -1,8 +1,9 @@
-extends ../layouts/index
-include ../blocks/table
+extends /layouts/index
+include /blocks/counter
+include /blocks/test
 
 block date
-    .main__date.desktop.js-font
+    .main__date.js-font
         strong Date :
         = " "
         | Jan 17, 2017
@@ -11,10 +12,14 @@ block font
     +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
-    .main__inner
+    - var question = 'A client is prescribed 1200 units of intravenous heparin per hour. The medication is provided as 25,000 units in 2.5 dl (deciliters) of normal saline. Calculate the rate in which the nurse should administer this medication in ml (mililiters) per hour. (Only enter the numeric value.)'
 
-        +table([
-            {name: "Free HESI RN Exit Practice", status: "Not Started"}
-        ]).js-font
+    .main__counter
+        +counter(
+        'Fill-In Choice Single Answer',
+        'This is a fill in the blank question. Please type your answer in the box provided.'
+        )
+    .main__test
+        +test(102, question, 'block', [], 'index_06.html')
+            input.input.test__input(type="number", value="1000000", name="answer")
 
-        a.button.main__button.main__button_w_130.main__button_mr_10.js-font(href="index_06.html") Start Exam

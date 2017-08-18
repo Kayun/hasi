@@ -1,7 +1,6 @@
-extends ../layouts/index
-include ../blocks/counter
-include ../blocks/test
-include ../blocks/sort
+extends /layouts/index
+include /blocks/counter
+include /blocks/test
 
 block date
     .main__date.desktop.js-font
@@ -13,19 +12,18 @@ block font
     +font-switch([11, 12, 14], [12, 13, 14])._white
 
 block content
-    - var question = 'A recently deceased client needs post-mortem care. In which order should the nurse provide this care? (Arrange from first on top to last on bottom.)'
+    - var question = 'An elderly client experiences nocturia. Which actions should the nurse implement to assist this client? (Select all that apply.)'
 
     .main__counter
         +counter(
-        'Ranking',
-        'Please use the mouse to click on items and move them to position answers in the correct order. Be concise and accurate.'
+            'Multiple Choice Multiple Answer',
+            'This item can have multiple correct answers. Refer to question instructions for answering information.'
         )
     .main__test
-        +test(103, question, 'block', [], 'index_07.html')
-            +sort([
-                ['Remove indwelling devices.', 'a'],
-                ['Invite family members to view the deceased.', 'b'],
-                ['Collect specimens as requested.', 'c'],
-                ['Verify if autopsy and/or tissue and organ donation requests have been made.', 'd'],
-                ['Bathe and dress the body of the deceased.', 'e']
-            ])
+        +test(101, question, 'checkbox', [
+            ['A', 'Ensure adequate night time lighting.'],
+            ['B', 'Have a call bell within reach of the client.'],
+            ['C', 'Provide warm water over the perineum.'],
+            ['D', 'Ensure the availability of a bedpan or toilet.'],
+            ['E', 'Ensure adequate fluid intake.']
+        ], 'index_05.html')

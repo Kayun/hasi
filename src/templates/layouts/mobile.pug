@@ -1,0 +1,48 @@
+include /helpers/variables
+include /helpers/mixins
+
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+
+        +styles(["mobile"])
+
+        block header
+            title= title
+    body.page
+
+        include /blocks/mobile/header
+
+        main
+            block content
+
+        include /blocks/mobile/footer
+
+        if !IS_PROD
+            +scripts(["mobile"])
+
+        script.
+            var menu = document.querySelector('.js-menu');
+            var toggle = document.querySelector('.js-menu-toggle');
+            var outTouch = function () {
+                menu.classList.remove('_open');
+                document.removeEventListener('touchstart', outTouch, false);
+                console.log('remove');
+            }
+
+            menu.addEventListener('touchstart', function (event) {
+                event.stopPropagation();
+            })
+
+            toggle.addEventListener('touchstart', function (event) {
+                event.stopPropagation();
+                menu.classList.toggle('_open');
+
+                if (menu.classList.contains('_open')) {
+                    document.addEventListener('touchstart', outTouch, false)
+                } else {
+                    document.removeEventListener('touchstart', outTouch, false);
+                }
+            }, false)
