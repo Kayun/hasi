@@ -7,6 +7,10 @@
   "assets\\fonts\\Montserrat-Regular.woff2": "/public/assets/fonts/Montserrat-Regular.woff2",
   "assets\\fonts\\Montserrat-SemiBold.woff": "/public/assets/fonts/Montserrat-SemiBold.woff",
   "assets\\fonts\\Montserrat-SemiBold.woff2": "/public/assets/fonts/Montserrat-SemiBold.woff2",
+  "assets\\fonts\\MyriadPro-Regular.woff": "/public/assets/fonts/MyriadPro-Regular.woff",
+  "assets\\fonts\\MyriadPro-Regular.woff2": "/public/assets/fonts/MyriadPro-Regular.woff2",
+  "assets\\fonts\\MyriadPro-SemiBold.woff": "/public/assets/fonts/MyriadPro-SemiBold.woff",
+  "assets\\fonts\\MyriadPro-SemiBold.woff2": "/public/assets/fonts/MyriadPro-SemiBold.woff2",
   "assets\\fonts\\SinkinSans-200XLight.woff": "/public/assets/fonts/SinkinSans-200XLight.woff",
   "assets\\fonts\\SinkinSans-200XLight.woff2": "/public/assets/fonts/SinkinSans-200XLight.woff2",
   "assets\\fonts\\SinkinSans-700Bold.woff": "/public/assets/fonts/SinkinSans-700Bold.woff",
@@ -20,5 +24,6 @@
   "mobile.css": "/public/assets/styles/mobile.css",
   "mobile.css.map": "/public/assets/styles/mobile.css.map",
   "mobile.js": "/public/assets/scripts/mobile.js",
-  "mobile.js.map": "/public/assets/scripts/mobile.js.map"
+  "mobile.js.map": "/public/assets/scripts/mobile.js.map",
+  "assets\\images\\practice.png": "/public/assets/images/practice.png"
 }

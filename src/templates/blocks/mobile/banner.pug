@@ -1,5 +1,20 @@
-section.section.banner
-    h2.banner__title 24 HOURS EXAM PRACTICE
+section.banner
+    h2.banner__title HESI EXAM STUDY CENTER
 
-    .banner__text Pass The Hesi RN Exit Exam
-    .banner__text._small Start your practice today
+    .banner__info
+        h3.banner__subtitle HESI RN Exit Exam 2017/2018
+        .banner__text
+            | Members, please select a practice test below to start a HESI Practice Exam or click
+            | on 'more practice exams' below to find additional practice exams in the members-only
+            | area.
+
+    .banner__text.banner__link
+        | Not a
+        = " "
+        a.link(href="javascript:void(0)") member
+        = " "
+        | yet?
+
+    .banner__control
+        button.banner__button._orange(type="button") Register now
+        button.banner__button(type="button") Free practice exam
