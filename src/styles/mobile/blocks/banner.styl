@@ -1,23 +1,69 @@
 .banner
-    height: rem(595px)
+    height: rem(790px)
     font-family: 'SinkinSans', sans-serif
-    background: #f8f8f8 url('../images/banner_1.jpg') no-repeat
+    background: url('../images/banner_1.jpg') no-repeat
     background-size: cover
 
     &__title
         margin: 0
-        padding-top: rem(55px)
-        padding-bottom: rem(17px)
-        font-weight: 700
+        padding-top: rem(31px)
+        padding-bottom: rem(28px)
         text-align: center
-        fs: rem(28px)
-        line-height: 1.23
+        color: #ffffff
+        background-color: rgba(#fff, .2)
+        fs: rem(25px)
+        font-weight: 600
+        font-family: 'Raleway', sans-serif
+        line-height: 1.5
+        text-shadow: 1px 2px #000
+
+    &__info
+        padding-left: rem(205px)
+        padding-right: rem(69px)
+        margin-top: rem(58px)
+        font-family: 'Montserrat', sans-serif
+
+    &__subtitle
+        margin: 0
+        margin-bottom: rem(30px)
+        fs: rem(21px)
+        font-weight: 400
+        line-height: 1.2
+        color: #ffffff
+        font-family: 'Montserrat', sans-serif
 
     &__text
-        font-weight: 200
-        text-align: center
-        fs: rem(23px)
-        line-height: 1.3
+        fs: rem(21px)
+        font-weight: 300
+        line-height: 1.4
+        color: #ffffff
+        font-family: 'Montserrat', sans-serif
 
-        &._small
-            fs: rem(17px)
+    &__link
+        margin-top: rem(65px)
+        text-align: center
+
+        .link
+            fs: rem(21px)
+            font-weight: 300
+            line-height: rem(29px)
+
+    &__control
+        margin-top: rem(52px)
+        padding: 0 rem(22px)
+        display: flex
+        justify-content space-between
+
+    &__button
+        button-reset()
+        rounded()
+        font-family: 'Myriad Pro', sans-serif
+        width: rem(204px)
+        text-transform: uppercase
+        color: #ffffff
+        line-height: rem(62px)
+        fs: rem(19px)
+        background-color: #19b9cc
+
+        &._orange
+            background-color: #ffae00
