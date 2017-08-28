@@ -8,8 +8,11 @@
     &__logo
         size: rem(239px) rem(95px)
 
+        +mobile(orientation: 'landscape')
+            size: rem(179px) rem(71px)
+
         +below(500px)
-            size: rem(163px) rem(65px)
+            size: rem(179px) rem(71px)
             margin-bottom: rem(10px)
 
     &__header
@@ -34,6 +37,9 @@
 
         +below(460px)
             padding-top: rem(36px)
+
+        +mobile(orientation: 'landscape')
+            padding-top: rem(20px)
 
     &__inner
         width: 100%
@@ -62,6 +68,9 @@
             margin: 0
             width: 100%
             margin-top: rem(20px)
+            line-height: rem(40px)
+
+        +mobile(orientation: 'landscape')
             line-height: rem(40px)
 
     &__counter

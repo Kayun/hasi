@@ -3,6 +3,7 @@
 
     &__item
         relative()
+        display: flex
         padding: rem(10px) 0 rem(9px)
         border-bottom: 1px solid transparent
 
@@ -13,10 +14,9 @@
             background-image: linear-gradient(to right, #dfdfdf, rgba(255, 255, 255, 0))
 
     &__count
-        display: inline-block
         font-weight: 700
         color: $blue-color
 
     &__label
-        display: inline-block
-        padding-left: 10px
+        flex: 1
+        margin-left: 10px
