@@ -26,9 +26,9 @@ mixin table(rows)
                         label.checkbox.checkbox_without_letter.exam-table__checkbox
                             input.checkbox__input(type="checkbox")
                             .checkbox__label
-                                span Timed Test Mode
-
-                                span
+                                | Timed Test Mode
+                                = " "
+                                span.exam-table__descr
                                     | (Average
 
                                     select.exam-table__select
@@ -38,6 +38,17 @@ mixin table(rows)
                                         option 4
 
                                     | Minute(s) Per Question)
+
+                                .exam-table-card__descr
+                                    span Average Per Question:
+                                    br
+                                    select.exam-table__select
+                                        option 1
+                                        option 2
+                                        option 3
+                                        option 4
+                                    | &nbsp;
+                                    span Minute(s)
 
 
         each row in rows

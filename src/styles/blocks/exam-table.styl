@@ -77,6 +77,18 @@
             appearance: menulist
             border-radius: 0
 
+        +mobile(orientation: 'landscape')
+            margin-left: 0
+            border: 1px solid #bbb9bd
+            background: transparent
+            appearance: menulist
+            border-radius: 0
+
+    &__descr
+
+        +mobile(orientation: 'landscape')
+            display: none
+
     &__button
         width: rem(130px)
         padding: 0
@@ -195,3 +207,10 @@
         color: #777777
         font-size: 10px
         line-height: 18px
+        display: none
+
+        +below(640px)
+            display: block
+
+        +mobile(orientation: 'landscape')
+            display: block
