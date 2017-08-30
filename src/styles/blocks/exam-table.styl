@@ -29,9 +29,18 @@
                 padding-top: 10px
                 padding-bottom: 9px
 
+                +mobile(orientation: 'landscape')
+                    padding: 13px 10px 13px
+
             &^[0]__button-cell
                 padding-top: 11px
                 padding-bottom: 10px
+
+                +mobile(orientation: 'landscape')
+                    padding: 13px 10px 13px
+
+            +mobile(orientation: 'landscape')
+                vertical-align: top
 
     &__name
     &__status

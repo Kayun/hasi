@@ -1,0 +1,26 @@
+.slider
+    display: none
+
+    &._active
+        display: block
+
+    .ui-slider-range
+        absolute: top 0 left 0
+        height: rem(3px)
+        background-color: $blue-color
+
+    &__point
+        absolute: bottom calc(100% + 4px) right -8px
+        color: #fff
+        fs: 6px
+        font-weight: 500
+        text-align: center
+        outline: none
+        cursor: pointer
+        transform: translateX(-50%)
+        -webkit-font-smoothing: subpixel-antialiased
+        sprite2x($point);
+
+    &__value
+        display: inline-block
+        padding-top: rem(5px)

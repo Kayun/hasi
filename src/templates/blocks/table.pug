@@ -20,7 +20,7 @@ mixin table(rows)
                             input.checkbox__input(type="checkbox")
                             .checkbox__label Study Mode
                         | &nbsp;
-                        +answer("Inmediate Answers <br>& Rationales").exam-table__info
+                        +answer("Inmediate Answers <br>& Rationales").exam-table__info.js-answer
 
                     td.exam-table__select-cell
                         label.checkbox.checkbox_without_letter.exam-table__checkbox
@@ -39,16 +39,16 @@ mixin table(rows)
 
                                     | Minute(s) Per Question)
 
-                                .exam-table-card__descr
-                                    span Average Per Question:
-                                    br
-                                    select.exam-table__select
-                                        option 1
-                                        option 2
-                                        option 3
-                                        option 4
-                                    | &nbsp;
-                                    span Minute(s)
+                            .exam-table-card__descr.exam-table-card__aligner
+                                span Average Per Question:
+                                br
+                                select.exam-table__select
+                                    option 1
+                                    option 2
+                                    option 3
+                                    option 4
+                                | &nbsp;
+                                span Minute(s)
 
 
         each row in rows

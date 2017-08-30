@@ -1,7 +1,8 @@
 mixin test(count, question, type, answers, nextPage)
     form.test.js-question-form(href="#")
-        .test__progress(style="width: 75%")
-            .test__progress-point: span 75%
+        .slider.js-slider(data-value="75")
+            .slider__point.ui-slider-handle
+                span.slider__value.js-slider-value
 
         .test__content
             .test__count.js-font #{count} of 180
