@@ -1,6 +1,7 @@
 import { Calculator } from './calculator';
 import $ from 'jquery';
 import 'jquery-ui/ui/widgets/sortable';
+import 'jquery-ui/ui/widgets/slider';
 import 'imports-loader?jQuery=jquery!jquery-ui-touch-punch';
 
 $(() => {
@@ -13,6 +14,8 @@ $(() => {
 
   let $aside = $('.js-aside');
   let $calculator = $('.js-calculator');
+  let $slider = $('.js-slider');
+  let $sliderValue = $('.js-slider-value');
 
   let $sortContainer = $('.js-sort');
   let $tooltip = $('.js-answer');
@@ -35,7 +38,7 @@ $(() => {
     })
   }
 
-  $(document).on('click touchstart', event => {
+  $(document).on('touchstart', event => {
     let $target = $(event.target);
 
     if ($(window).width() <= 1024) {
@@ -44,6 +47,24 @@ $(() => {
       } else {
         $tooltip.removeClass('_active')
       }
+    }
+  })
+
+  $slider.slider({
+    range: "min",
+    min: 0,
+    max: 100,
+    create() {
+      let $target = $(this);
+      let value = $target.data('value');
+      $target.slider('value', value);
+
+      $sliderValue.text(`${value}%`);
+
+      $target.addClass('_active')
+    },
+    slide(event, ui) {
+      $sliderValue.text(`${ui.value}%`);
     }
   })
 
