@@ -1,23 +1,18 @@
-$logo-size = { w: 244px, h: 100px }
-$toggle-size = { w: 46px, h: 39px }
-
-$padding = 38px
-
 .header
     relative()
-    padding: rem(3px) rem($padding)
+    padding: rem(3px) rem(38px)
     height: rem(106px)
     background-color: #f4f4ee
 
     &__logo
         display: block
-        size: rem($logo-size.w) rem($logo-size.h)
+        size: rem(241px) rem(94px)
 
     &__toggle
         relative()
         margin: rem(30px) 0
         float: right
-        size: rem($toggle-size.w) rem($toggle-size.h)
+        size: rem(46px) rem(39px)
         button-reset()
 
         &:before

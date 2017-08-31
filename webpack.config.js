@@ -41,7 +41,7 @@ let templates = () => {
 module.exports = {
   context: SRC_DIR,
   entry: {
-    mobile: './styles/mobile.styl',
+    mobile: ['./scripts/mobile.js', './styles/mobile.styl'],
     common: ['./scripts/index.js', './styles/index.styl']
   },
   output: {
