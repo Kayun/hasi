@@ -37,6 +37,9 @@
             & ^[1]-label:before
                 transform: rotate(90deg)
 
+            & ^[1]-info
+                display: block
+
     &__option-label
         relative()
         display: flex
@@ -57,6 +60,7 @@
             sprite2x-rem($toggle)
 
     &__option-info
+        display: none
         relative()
         padding: rem(51px) rem(30px) rem(50px) rem(67px)
         margin-right: rem(35px)

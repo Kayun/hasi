@@ -1,6 +1,6 @@
 .footer
     color: #ffffff
-    padding: rem(70px) rem(40px)
+    padding: rem(70px) rem(40px) rem(50px)
     background-image: linear-gradient(to top, #0e6dc0, #2193f8)
 
     &__social
@@ -47,7 +47,24 @@
             margin-left: rem(20px)
 
             &:before
-                absolute: top 0 left -10px
+                absolute: top 0 left rem(-10px)
                 size: 1px 100%
                 background-color: #ffffff
                 content: ''
+
+    &__icons
+        margin-top: rem(40px)
+        display: flex
+        justify-content: center
+
+        &:before
+            margin-top: rem(12px)
+            margin-right: rem(10px)
+            content: ''
+            display: block
+            sprite2x-rem($bbb)
+
+        &:after
+            content: ''
+            display: block
+            sprite2x-rem($norton)
