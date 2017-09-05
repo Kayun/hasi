@@ -38,6 +38,7 @@
         display: block
         line-height: rem(63px)
         padding-left: rem(47px)
+        @extend .practice__item-link
 
         &._open
 
@@ -51,6 +52,7 @@
             sprite2x-rem($toggle_gray)
 
     &__option-label
+        display: block
         padding: 0 rem(25px)
         font-weight: 400
         font-family: 'Myriad Pro', sans-serif
@@ -59,6 +61,8 @@
         line-height: rem(69px)
         color: #7d7d7d
         fs: rem(21px)
+        relative()
+        text-decoration: none
 
         &._open
 
@@ -66,11 +70,7 @@
                 transform: translateY(-50%) rotate(90deg)
 
         span
-        a
             relative()
-            color: #7d7d7d
-            text-decoration: none
-
 
             &:before
                 content: ''
