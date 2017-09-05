@@ -27,7 +27,9 @@ section.other
                     | website.
 
                 .other__option-text
-                    | Please checkout www.YourBestGrade.com/a2/
+                    | Please checkout
+                    = " "
+                    a(href="http://www.YourBestGrade.com/a2/") www.YourBestGrade.com/a2/
 
                 .other__option-text
                     | We wish you all the best in preparing for this exam, and please come back to
@@ -51,12 +53,15 @@ section.other
                     | extensively covered in our Hesi Exam Review Guide.
 
                 .other__option-text
-                    | Please send an email to lpn@yourbestgrade.com if you have any questions.
+                    | Please send an email to
+                    = " "
+                    a(href="mailto:lpn@yourbestgrade.com") lpn@yourbestgrade.com
+                    = " "
+                    | if you have any questions.
 
     .other__option.js-toggle
-        .other__option-label.js-toggle
+        .other__option-label
             a.other__option-link(href="https://www.yourbestgrade.com/hesi/other_tests") ATI Exam Practice / NLN Testing Practice
 
-        .js-toggle-container(hidden)
 
 
