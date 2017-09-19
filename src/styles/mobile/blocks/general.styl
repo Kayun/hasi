@@ -4,7 +4,7 @@
     color: #404040
 
     &.section
-        padding-bottom: rem(180px)
+        padding-bottom: rem(40px)
 
     &__title
         padding-top: rem(60px)
@@ -34,13 +34,18 @@
 
     &__more
         relative()
-        padding-left: rem(20px)
-        absolute: bottom rem(90px) right rem(47px)
-        fs: rem(21px)
-        color: #404040
-        text-decoration: none
+        display: flex
+        margin-top: 20px
+        justify-content: flex-end
 
-        &:before
-            content: ''
-            absolute: top rem(6px) left 0
-            sprite2x-rem($quote_big)
+        a
+            relative()
+            padding-left: rem(20px)
+            fs: rem(21px)
+            color: #404040
+            text-decoration: none
+
+            &:before
+                content: ''
+                absolute: top rem(6px) left 0
+                sprite2x-rem($quote_big)

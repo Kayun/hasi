@@ -150,6 +150,9 @@ module.exports = {
       },
       apiOptions: {
         cssImageRef: `${PUBLIC_PATH}/assets/images/sprite${hashInclude('hash')}.png`
+      },
+      spritesmithOptions: {
+        padding: 4
       }
 
     })
