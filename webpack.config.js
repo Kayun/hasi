@@ -149,8 +149,10 @@ module.exports = {
       },
       apiOptions: {
         cssImageRef: `/assets/images/sprite${hashInclude('hash')}.png`
+      },
+      spritesmithOptions: {
+        padding: 4
       }
-
     })
   ].concat(templates()).concat(
     IS_PROD ? [
