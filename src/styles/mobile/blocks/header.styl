@@ -24,15 +24,11 @@
             box-shadow: 0 rem(16px) #34495e, 0 rem(32px) #34495e
 
     &__menu
-        absolute: top rem(16px) right rem(104px)
-        width: 65%
-        max-width: rem(312px)
-        opacity: 0
-        visibility: hidden
-        transition: opacity .3s ease, visibility 0s linear .3s
-        will-change: opacity
+        fixed: top 0 right 0 left 0 bottom 0
+        z-index: 100
+        transform: translateX(100%)
+        transition: transform .3s ease
+        will-change: transform
 
         &._open
-            opacity: 1
-            visibility: visible
-            transition-delay: 0s
+            transform: translateX(0)

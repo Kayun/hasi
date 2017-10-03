@@ -1,44 +1,44 @@
 .menu
-    relative()
-    padding: rem(17px)
-    padding-bottom: rem(35px)
-    background-color: #fff
-    border-radius: 8px
-    margin: 0
-    list-style: none
-    box-shadow: 0 0 10px rgba(0, 0, 0 , 0.15)
+    absolute: top 0 right 0 bottom 0 left 0
+    background-color: rgba(#333, 0.85)
+    padding: rem(50px)
 
-    &:before
-        absolute: top rem(29px) right -8px
-        content: ''
-        border-left: 9px solid #fff
-        border-top: 9px solid transparent
-        border-bottom: 9px solid transparent
+    ul
+        margin: 0
+        padding: 0
+        list-style: none
+
+    &__close
+        absolute: top rem(32px) right rem(32px)
+        size: rem(46px)
+        border: rem(2px) solid #fff
+        border-radius: 50%
+        transform: rotate(45deg)
+
+        &:before
+            absolute: top 50% left 50%
+            transform: translate(-50%, -50%)
+            size: rem(2px) rem(24px)
+            content: ''
+            background-color: #ffffff
+
+        &:after
+            absolute: top 50% left 50%
+            transform: translate(-50%, -50%)
+            size: rem(24px) rem(2px)
+            content: ''
+            background-color: #ffffff
 
     &__item
-        relative()
         display: block
-        padding: 0 rem(22px)
-        line-height: rem(52px)
+        margin: rem(34px) 0
+        padding: 0
+        text-align: center
+        line-height: rem(40px)
         text-decoration: none
         text-transform: uppercase
-        color: #b0b0b0
-        fs: rem(20px)
+        color: #fff
+        fs: rem(34px)
         font-weight: 300
         font-family: 'Montserrat', sans-serif
         transition()
-
-        &:before
-            vertically-align()
-            absolute: right rem(20px)
-            content: ''
-            sprite2x-rem($round)
-            opacity: 0
-            transition()
-
-        &:hover
-        &:active
-            background-color: #e3e7eb
-
-            &:before
-                opacity: 1
