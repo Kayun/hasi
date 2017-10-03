@@ -25,24 +25,23 @@ html(lang="en")
 
         script.
             var menu = document.querySelector('.js-menu');
-            var toggle = document.querySelector('.js-menu-toggle');
+            var open = document.querySelector('.js-menu-open');
+            var close = document.querySelector('.js-menu-close');
             var outTouch = function () {
                 menu.classList.remove('_open');
                 document.removeEventListener('touchstart', outTouch, false);
-                console.log('remove');
             }
 
             menu.addEventListener('touchstart', function (event) {
                 event.stopPropagation();
             })
 
-            toggle.addEventListener('touchstart', function (event) {
+            open.addEventListener('touchstart', function (event) {
                 event.stopPropagation();
-                menu.classList.toggle('_open');
+                menu.classList.add('_open');
+            }, false)
 
-                if (menu.classList.contains('_open')) {
-                    document.addEventListener('touchstart', outTouch, false)
-                } else {
-                    document.removeEventListener('touchstart', outTouch, false);
-                }
+            close.addEventListener('touchstart', function (event) {
+                event.stopPropagation();
+                menu.classList.remove('_open');
             }, false)

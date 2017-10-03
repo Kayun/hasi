@@ -13,7 +13,7 @@ const axis = require('axis');
 const rupture = require('rupture');
 
 const SRC_DIR = path.resolve(__dirname, 'src');
-const PUBLIC_PATH = '/hasi/public/';
+const PUBLIC_PATH = '/';
 const IS_PROD = process.env.NODE_ENV === 'production'
 
 let hashInclude = (hasName, sufix = '') => IS_PROD ? `.[${hasName}:20]${sufix}` : ''
@@ -149,10 +149,10 @@ module.exports = {
         css: path.resolve(__dirname, 'src/styles/helpers/sprite.styl')
       },
       apiOptions: {
-        cssImageRef: `${PUBLIC_PATH}/assets/images/sprite${hashInclude('hash')}.png`
+        cssImageRef: `${PUBLIC_PATH}assets/images/sprite${hashInclude('hash')}.png`
       },
       spritesmithOptions: {
-        padding: 4
+        padding: 6
       }
 
     })

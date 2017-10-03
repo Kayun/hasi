@@ -56,21 +56,53 @@
         flex: 0 0 auto
         clearfix()
 
+        +below(520px)
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+
         &-buttons
 
             +below(520px)
+                order: 1
                 display: flex
                 flex-flow: row nowrap
                 justify-content: space-between
-                padding-top: rem(20px)
                 clear: both
 
             +below('xs')
                 flex-direction: column
 
+        &-links
+            float: right
+
+            column()
+                display: flex
+                margin-left: auto
+                flex-direction: column
+                justify-content: flex-end
+
+            +between(768px, 940px)
+                column()
+
+            +between(521px, 640px)
+                column()
+
+            +below(520px)
+                float: none
+                text-align: right
+                padding-top: rem(20px)
+                order: 2
+
+            +below(400px)
+                display: flex
+                justify-content: space-around
+
+            +below(360px)
+                column()
+
     &__feedback
         relative()
-        float: right
         color: $blue-color
         font-family: $font-stack
         letter-spacing: 0
@@ -82,6 +114,18 @@
         hover-color: darken($blue-color, 20%) true
         transition: color .3s ease
 
+        +between(768px, 940px)
+            margin-left: auto
+            margin-top: 0
+
+        +between(521px, 640px)
+            margin-left: auto
+            margin-top: 0
+
+        +below(360px)
+            margin-left: auto
+            margin-top: 0
+
         &:before
             absolute: top rem(1px) left rem(-15px)
             content: ''
@@ -90,6 +134,18 @@
     &__review
         @extend .test__feedback
         margin-right: 15px
+
+        +between(768px, 940px)
+            margin-right: 0
+            margin-bottom: 10px
+
+        +between(521px, 640px)
+            margin-right: 0
+            margin-bottom: 10px
+
+        +below(360px)
+            margin-right: 0
+            margin-bottom: 10px
 
         &:before
             sprite2x($flag)
@@ -116,7 +172,6 @@
                 margin-top: rem(20px)
 
     &__input
-        color: #000000
 
         &::-webkit-outer-spin-button
         &::-webkit-inner-spin-button
